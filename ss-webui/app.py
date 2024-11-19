@@ -1,38 +1,8 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 from jinja2 import TemplateNotFound
 from pythonosc.udp_client import SimpleUDPClient
 
 app = Flask(__name__, template_folder='templates')
-
-app_data = {
-    'binuralOutputGainSlider': 0,
-    'binuralFrequencySlider': 0,
-    'transpositionSlider': 0,
-    'mixSlider': 0,
-    'spreadSlider': 0,
-    'windowSlider': 2,
-    'toneFrequencySlider': 20,
-    'toneVolumeSlider': 0,
-    'pinkNoiseVolumeSlider': 0,
-    'lookaheadDropdown': 0,
-    'compressorVolumeSlider': 0,
-    'compressorCompSlider': 0,
-    'compressorSoftclipSlider': 0,
-    'compressorAttackSlider': 0,
-    'compressorSustainSlider': 0,
-    'soundVolumeSlider': 0,
-    'soundVolumeSlider2': 0
-}
-
-@app.route('/rnbo/inst/<int:inst_id>/params/<param>', methods=['GET'])
-def get_param_value(inst_id, param):
-    value = app_data.get(param, 0)
-    return jsonify({'VALUE': value})
-
-@app.route('/rnbo/resp', methods=['GET'])
-def get_file_list():
-    files = ['file1.wav', 'file2.wav', 'file3.wav']  # Example file list
-    return jsonify({'VALUE': json.dumps({'result': {'content': json.dumps(files)}})})
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -165,19 +135,4 @@ def index():
         return "Template not found", 404
 
 if __name__ == '__main__':
-    from threading import Thread
-    Thread(target=lambda: app.run(debug=False, host='0.0.0.0', port=8080)).start()
-    Thread(target=lambda: data_app.run(debug=False, host='0.0.0.0', port=5678)).start()
-
-# Run a separate instance for data retrieval on port 5678
-data_app = Flask(__name__)
-
-@data_app.route('/rnbo/inst/<int:inst_id>/params/<param>', methods=['GET'])
-def get_param_value(inst_id, param):
-    value = app_data.get(param, 0)
-    return jsonify({'VALUE': value})
-
-@data_app.route('/rnbo/resp', methods=['GET'])
-def get_file_list():
-    files = ['file1.wav', 'file2.wav', 'file3.wav']  # Example file list
-    return jsonify({'VALUE': json.dumps({'result': {'content': json.dumps(files)}})})
+    app.run(debug=False, host='0.0.0.0', port=8080)  # Listen on all network interfaces
