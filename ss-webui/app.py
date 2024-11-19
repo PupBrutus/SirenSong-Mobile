@@ -8,6 +8,7 @@ app = Flask(__name__, template_folder='templates')
 def index():
     server = '127.0.0.1'
     port = '1234'
+    data_retrieve_port = '5678'
     binural_output_gain_value = 0
     binural_frequency_value = 0
     transposition_value = 0
@@ -112,6 +113,7 @@ def index():
         return render_template('index.html', 
                                server=server, 
                                port=port, 
+                               data_retrieve_port=data_retrieve_port,
                                binural_output_gain_value=binural_output_gain_value, 
                                binural_frequency_value=binural_frequency_value, 
                                transposition_value=transposition_value, 

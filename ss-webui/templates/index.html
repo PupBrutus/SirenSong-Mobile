@@ -54,23 +54,23 @@
 
         function fetchInitialValues() {
             const sliders = [
-                { id: 'binuralOutputGainSlider', url: '/rnbo/inst/0/params/post-gain', valueId: 'binuralOutputGainValue' },
-                { id: 'binuralFrequencySlider', url: '/rnbo/inst/0/params/binuralfreq', valueId: 'binuralFrequencyValue' },
-                { id: 'transpositionSlider', url: '/rnbo/inst/1/params/transp', valueId: 'transpositionValue' },
-                { id: 'mixSlider', url: '/rnbo/inst/1/params/mix', valueId: 'mixValue' },
-                { id: 'spreadSlider', url: '/rnbo/inst/1/params/spread', valueId: 'spreadValue' },
-                { id: 'windowSlider', url: '/rnbo/inst/1/params/window', valueId: 'windowValue' },
-                { id: 'toneFrequencySlider', url: '/rnbo/inst/2/params/tonefreq', valueId: 'toneFrequencyValue' },
-                { id: 'toneVolumeSlider', url: '/rnbo/inst/2/params/tonevol', valueId: 'toneVolumeValue' },
-                { id: 'pinkNoiseVolumeSlider', url: '/rnbo/inst/3/params/pinkvol', valueId: 'pinkNoiseVolumeValue' },
-                { id: 'lookaheadDropdown', url: '/rnbo/inst/4/params/lookahead', valueId: 'lookaheadValue' },
-                { id: 'compressorVolumeSlider', url: '/rnbo/inst/4/params/volume', valueId: 'compressorVolumeValue' },
-                { id: 'compressorCompSlider', url: '/rnbo/inst/4/params/comp', valueId: 'compressorCompValue' },
-                { id: 'compressorSoftclipSlider', url: '/rnbo/inst/4/params/softclip', valueId: 'compressorSoftclipValue' },
-                { id: 'compressorAttackSlider', url: '/rnbo/inst/4/params/attack', valueId: 'compressorAttackValue' },
-                { id: 'compressorSustainSlider', url: '/rnbo/inst/4/params/sustain', valueId: 'compressorSustainValue' },
-                { id: 'soundVolumeSlider', url: '/rnbo/inst/5/params/soundvol', valueId: 'soundVolumeValue' },
-                { id: 'soundVolumeSlider2', url: '/rnbo/inst/6/params/soundvol', valueId: 'soundVolumeValue2' }
+                { id: 'binuralOutputGainSlider', url: 'http://127.0.0.1:5678/rnbo/inst/0/params/post-gain', valueId: 'binuralOutputGainValue' },
+                { id: 'binuralFrequencySlider', url: 'http://127.0.0.1:5678/rnbo/inst/0/params/binuralfreq', valueId: 'binuralFrequencyValue' },
+                { id: 'transpositionSlider', url: 'http://127.0.0.1:5678/rnbo/inst/1/params/transp', valueId: 'transpositionValue' },
+                { id: 'mixSlider', url: 'http://127.0.0.1:5678/rnbo/inst/1/params/mix', valueId: 'mixValue' },
+                { id: 'spreadSlider', url: 'http://127.0.0.1:5678/rnbo/inst/1/params/spread', valueId: 'spreadValue' },
+                { id: 'windowSlider', url: 'http://127.0.0.1:5678/rnbo/inst/1/params/window', valueId: 'windowValue' },
+                { id: 'toneFrequencySlider', url: 'http://127.0.0.1:5678/rnbo/inst/2/params/tonefreq', valueId: 'toneFrequencyValue' },
+                { id: 'toneVolumeSlider', url: 'http://127.0.0.1:5678/rnbo/inst/2/params/tonevol', valueId: 'toneVolumeValue' },
+                { id: 'pinkNoiseVolumeSlider', url: 'http://127.0.0.1:5678/rnbo/inst/3/params/pinkvol', valueId: 'pinkNoiseVolumeValue' },
+                { id: 'lookaheadDropdown', url: 'http://127.0.0.1:5678/rnbo/inst/4/params/lookahead', valueId: 'lookaheadValue' },
+                { id: 'compressorVolumeSlider', url: 'http://127.0.0.1:5678/rnbo/inst/4/params/volume', valueId: 'compressorVolumeValue' },
+                { id: 'compressorCompSlider', url: 'http://127.0.0.1:5678/rnbo/inst/4/params/comp', valueId: 'compressorCompValue' },
+                { id: 'compressorSoftclipSlider', url: 'http://127.0.0.1:5678/rnbo/inst/4/params/softclip', valueId: 'compressorSoftclipValue' },
+                { id: 'compressorAttackSlider', url: 'http://127.0.0.1:5678/rnbo/inst/4/params/attack', valueId: 'compressorAttackValue' },
+                { id: 'compressorSustainSlider', url: 'http://127.0.0.1:5678/rnbo/inst/4/params/sustain', valueId: 'compressorSustainValue' },
+                { id: 'soundVolumeSlider', url: 'http://127.0.0.1:5678/rnbo/inst/5/params/soundvol', valueId: 'soundVolumeValue' },
+                { id: 'soundVolumeSlider2', url: 'http://127.0.0.1:5678/rnbo/inst/6/params/soundvol', valueId: 'soundVolumeValue2' }
             ];
 
             sliders.forEach(slider => {
@@ -112,7 +112,7 @@
         }
 
         function populateDropdown() {
-            fetch('/rnbo/resp')
+            fetch('http://127.0.0.1:5678/rnbo/resp')
                 .then(response => response.json())
                 .then(data => {
                     const content = JSON.parse(data.VALUE).result.content;
