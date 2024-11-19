@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Configuration</title>
+    <script>
+        function sendSliderValue(sliderId) {
+            const slider = document.getElementById(sliderId);
+            const instanceParam = slider.dataset.instanceParam;
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(`${sliderId}=${slider.value}&instanceParam=${instanceParam}&action=connect`);
+            
+            const roundedValue = (Math.round(slider.value * 100) / 100).toFixed(2);
+            
+            if (sliderId === 'binuralOutputGainSlider') {
+                document.getElementById('binuralOutputGainValue').innerText = roundedValue;
+            } else if (sliderId === 'binuralFrequencySlider') {
+                document.getElementById('binuralFrequencyValue').innerText = roundedValue;
+            } else if (sliderId === 'transpositionSlider') {
+                document.getElementById('transpositionValue').innerText = roundedValue;
+            } else if (sliderId === 'mixSlider') {
+                document.getElementById('mixValue').innerText = roundedValue;
+            } else if (sliderId === 'spreadSlider') {
+                document.getElementById('spreadValue').innerText = roundedValue;
+            } else if (sliderId === 'windowSlider') {
+                document.getElementById('windowValue').innerText = roundedValue;
+            } else if (sliderId === 'toneFrequencySlider') {
+                document.getElementById('toneFrequencyValue').innerText = roundedValue;
+            } else if (sliderId === 'toneVolumeSlider') {
+                document.getElementById('toneVolumeValue').innerText = roundedValue;
+            } else if (sliderId === 'pinkNoiseVolumeSlider') {
+                document.getElementById('pinkNoiseVolumeValue').innerText = roundedValue;
+            } else if (sliderId === 'lookaheadDropdown') {
+                document.getElementById('lookaheadValue').innerText = roundedValue;
+            } else if (sliderId === 'compressorVolumeSlider') {
+                document.getElementById('compressorVolumeValue').innerText = roundedValue;
+            } else if (sliderId === 'compressorCompSlider') {
+                document.getElementById('compressorCompValue').innerText = roundedValue;
+            } else if (sliderId === 'compressorSoftclipSlider') {
+                document.getElementById('compressorSoftclipValue').innerText = roundedValue;
+            } else if (sliderId === 'compressorAttackSlider') {
+                document.getElementById('compressorAttackValue').innerText = roundedValue;
+            } else if (sliderId === 'compressorSustainSlider') {
+                document.getElementById('compressorSustainValue').innerText = roundedValue;
+            } else if (sliderId === 'soundVolumeSlider') {
+                document.getElementById('soundVolumeValue').innerText = roundedValue;
+            } else if (sliderId === 'soundVolumeSlider2') {
+                document.getElementById('soundVolumeValue2').innerText = roundedValue;
+            }
+        }
+
+        function fetchInitialValues() {
+            const sliders = [
+                { id: 'binuralOutputGainSlider', url: '/rnbo/inst/0/params/post-gain', valueId: 'binuralOutputGainValue' },
+                { id: 'binuralFrequencySlider', url: '/rnbo/inst/0/params/binuralfreq', valueId: 'binuralFrequencyValue' },
+                { id: 'transpositionSlider', url: '/rnbo/inst/1/params/transp', valueId: 'transpositionValue' },
+                { id: 'mixSlider', url: '/rnbo/inst/1/params/mix', valueId: 'mixValue' },
+                { id: 'spreadSlider', url: '/rnbo/inst/1/params/spread', valueId: 'spreadValue' },
+                { id: 'windowSlider', url: '/rnbo/inst/1/params/window', valueId: 'windowValue' },
+                { id: 'toneFrequencySlider', url: '/rnbo/inst/2/params/tonefreq', valueId: 'toneFrequencyValue' },
+                { id: 'toneVolumeSlider', url: '/rnbo/inst/2/params/tonevol', valueId: 'toneVolumeValue' },
+                { id: 'pinkNoiseVolumeSlider', url: '/rnbo/inst/3/params/pinkvol', valueId: 'pinkNoiseVolumeValue' },
+                { id: 'lookaheadDropdown', url: '/rnbo/inst/4/params/lookahead', valueId: 'lookaheadValue' },
+                { id: 'compressorVolumeSlider', url: '/rnbo/inst/4/params/volume', valueId: 'compressorVolumeValue' },
+                { id: 'compressorCompSlider', url: '/rnbo/inst/4/params/comp', valueId: 'compressorCompValue' },
+                { id: 'compressorSoftclipSlider', url: '/rnbo/inst/4/params/softclip', valueId: 'compressorSoftclipValue' },
+                { id: 'compressorAttackSlider', url: '/rnbo/inst/4/params/attack', valueId: 'compressorAttackValue' },
+                { id: 'compressorSustainSlider', url: '/rnbo/inst/4/params/sustain', valueId: 'compressorSustainValue' },
+                { id: 'soundVolumeSlider', url: '/rnbo/inst/5/params/soundvol', valueId: 'soundVolumeValue' },
+                { id: 'soundVolumeSlider2', url: '/rnbo/inst/6/params/soundvol', valueId: 'soundVolumeValue2' }
+            ];
+
+            sliders.forEach(slider => {
+                fetch(slider.url)
+                    .then(response => response.json())
+                    .then(data => {
+                        const value = data.VALUE;
+                        document.getElementById(slider.id).value = value;
+                        document.getElementById(slider.valueId).innerText = (Math.round(value * 100) / 100).toFixed(2);
+                    })
+                    .catch(error => console.error('Error fetching initial value:', error));
+            });
+        }
+
+        window.onload = function() {
+            fetchInitialValues();
+            populateDropdown();
+        };
+
+        function sendButtonValue(buttonId) {
+            const button = document.getElementById(buttonId);
+            const instanceParam = button.dataset.instanceParam;
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(`${buttonId}=1&instanceParam=${instanceParam}&action=connect`);
+        }
+
+        function toggleLoopButton(buttonId) {
+            const button = document.getElementById(buttonId);
+            const instanceParam = button.dataset.instanceParam;
+            const isActive = button.classList.toggle('active');
+            const value = isActive ? 1 : 0;
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(`${buttonId}=${value}&instanceParam=${instanceParam}&action=connect`);
+            button.style.backgroundColor = isActive ? 'green' : '';
+        }
+
+        function populateDropdown() {
+            fetch('/rnbo/resp')
+                .then(response => response.json())
+                .then(data => {
+                    const content = JSON.parse(data.VALUE).result.content;
+                    const files = JSON.parse(content);
+                    const dropdown1 = document.getElementById('fileDropdown');
+                    const dropdown2 = document.getElementById('fileDropdown2');
+                    files.forEach(file => {
+                        const fileName = file.split('/').pop();
+                        const option1 = document.createElement('option');
+                        option1.value = fileName;
+                        option1.text = fileName;
+                        dropdown1.add(option1);
+                        
+                        const option2 = document.createElement('option');
+                        option2.value = fileName;
+                        option2.text = fileName;
+                        dropdown2.add(option2);
+                    });
+                })
+                .catch(error => console.error('Error fetching file list:', error));
+        }
+
+        function sendDropdownValue(dropdownId) {
+            const dropdown = document.getElementById(dropdownId);
+            const instanceParam = dropdown.dataset.instanceParam;
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(`${dropdownId}=${dropdown.value}&instanceParam=${instanceParam}&action=connect`);
+        }
+
+        function sendLoadParameter() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(`loadButton="SirenSong"&instanceParam=/rnbo/inst/control/sets/load&action=connect`);
+        }
+    </script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            color: #bb86fc;
+        }
+        label {
+            color: #e0e0e0;
+        }
+        input[type="text"], select {
+            background-color: #333;
+            color: #e0e0e0;
+            border: 1px solid #444;
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: #444;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: #bb86fc;
+            cursor: pointer;
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 15px;
+            height: 15px;
+            background: #bb86fc;
+            cursor: pointer;
+        }
+        button {
+            background-color: #333;
+            color: #e0e0e0;
+            border: 1px solid #444;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button.active {
+            background-color: green;
+        }
+        button:hover {
+            background-color: #444;
+        }
+        select {
+            background-color: #333;
+            color: #e0e0e0;
+            border: 1px solid #444;
+        }
+        span {
+            color: #bb86fc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Server Configuration</h1>
+    <form method="POST">
+        <label for="server">Server:</label>
+        <input type="text" id="server" name="server" value="{{ server }}"><br><br>
+        <label for="port">Port:</label>
+        <input type="text" id="port" name="port" value="{{ port }}"><br><br>
+        <!-- <button type="button" onclick="sendLoadParameter()">Load SirenSong</button><br><br> -->
+        
+        <div id="parameterControls">
+            <div id="binuralControls">
+                <h2>Binural Controls</h2>
+                <label for="binuralOutputGainSlider">Binural Output Gain:</label>
+                <input type="range" id="binuralOutputGainSlider" name="binuralOutputGainSlider" min="0" max="158" value="0" data-instance-param="/rnbo/inst/0/params/post-gain" oninput="sendSliderValue('binuralOutputGainSlider')">
+                <span id="binuralOutputGainValue">0</span><br><br>
+                <label for="binuralFrequencySlider">Binural Frequency:</label>
+                <input type="range" id="binuralFrequencySlider" name="binuralFrequencySlider" min="0" max="30" value="0" data-instance-param="/rnbo/inst/0/params/binuralfreq" oninput="sendSliderValue('binuralFrequencySlider')">
+                <span id="binuralFrequencyValue">0</span><br><br>
+            </div>
+            <div id="pitchShiftControls">
+                <h2>Pitch Shift Controls</h2>
+                <label for="transpositionSlider">Transposition:</label>
+                <input type="range" id="transpositionSlider" name="transpositionSlider" min="-24" max="24" value="0" data-instance-param="/rnbo/inst/1/params/transp" oninput="sendSliderValue('transpositionSlider')">
+                <span id="transpositionValue">0</span><br><br>
+                <label for="mixSlider">Mix:</label>
+                <input type="range" id="mixSlider" name="mixSlider" min="0" max="100" value="0" data-instance-param="/rnbo/inst/1/params/mix" oninput="sendSliderValue('mixSlider')">
+                <span id="mixValue">0</span><br><br>
+                <label for="spreadSlider">Spread:</label>
+                <input type="range" id="spreadSlider" name="spreadSlider" min="-100" max="100" value="0" data-instance-param="/rnbo/inst/1/params/spread" oninput="sendSliderValue('spreadSlider')">
+                <span id="spreadValue">0</span><br><br>
+                <label for="windowSlider">Window:</label>
+                <input type="range" id="windowSlider" name="windowSlider" min="2" max="200" value="2" data-instance-param="/rnbo/inst/1/params/window" oninput="sendSliderValue('windowSlider')">
+                <span id="windowValue">2</span><br><br>
+            </div>
+            <div id="toneGeneratorControls">
+                <h2>Tone Generator Controls</h2>
+                <label for="toneFrequencySlider">Frequency:</label>
+                <input type="range" id="toneFrequencySlider" name="toneFrequencySlider" min="20" max="1000" value="20" data-instance-param="/rnbo/inst/2/params/tonefreq" oninput="sendSliderValue('toneFrequencySlider')">
+                <span id="toneFrequencyValue">20</span><br><br>
+                <label for="toneVolumeSlider">Volume:</label>
+                <input type="range" id="toneVolumeSlider" name="toneVolumeSlider" min="0" max="158" value="0" data-instance-param="/rnbo/inst/2/params/tonevol" oninput="sendSliderValue('toneVolumeSlider')">
+                <span id="toneVolumeValue">0</span><br><br>
+            </div>
+            <div id="pinkNoiseControls">
+                <h2>Pink Noise Controls</h2>
+                <label for="pinkNoiseVolumeSlider">Volume:</label>
+                <input type="range" id="pinkNoiseVolumeSlider" name="pinkNoiseVolumeSlider" min="0" max="158" value="0" data-instance-param="/rnbo/inst/3/params/pinkvol" oninput="sendSliderValue('pinkNoiseVolumeSlider')">
+                <span id="pinkNoiseVolumeValue">0</span><br><br>
+            </div>
+            <div id="compressorControls">
+                <h2>Microphone Compressor Controls</h2>
+                <label for="lookaheadDropdown">Lookahead:</label>
+                <select id="lookaheadDropdown" name="lookaheadDropdown" data-instance-param="/rnbo/inst/4/params/lookahead" onchange="sendSliderValue('lookaheadDropdown')">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="10">10</option>
+                </select>
+                <span id="lookaheadValue">0</span><br><br>
+                <label for="compressorVolumeSlider">Volume:</label>
+                <input type="range" id="compressorVolumeSlider" name="compressorVolumeSlider" min="-100" max="100" value="0" data-instance-param="/rnbo/inst/4/params/volume" oninput="sendSliderValue('compressorVolumeSlider')">
+                <span id="compressorVolumeValue">0</span><br><br>
+                <label for="compressorCompSlider">Comp:</label>
+                <input type="range" id="compressorCompSlider" name="compressorCompSlider" min="0" max="100" value="0" data-instance-param="/rnbo/inst/4/params/comp" oninput="sendSliderValue('compressorCompSlider')">
+                <span id="compressorCompValue">0</span><br><br>
+                <label for="compressorSoftclipSlider">Softclip:</label>
+                <input type="range" id="compressorSoftclipSlider" name="compressorSoftclipSlider" min="0" max="1" value="0" data-instance-param="/rnbo/inst/4/params/softclip" oninput="sendSliderValue('compressorSoftclipSlider')">
+                <span id="compressorSoftclipValue">0</span><br><br>
+                <label for="compressorAttackSlider">Attack:</label>
+                <input type="range" id="compressorAttackSlider" name="compressorAttackSlider" min="0" max="100" value="0" data-instance-param="/rnbo/inst/4/params/attack" oninput="sendSliderValue('compressorAttackSlider')">
+                <span id="compressorAttackValue">0</span><br><br>
+                <label for="compressorSustainSlider">Sustain:</label>
+                <input type="range" id="compressorSustainSlider" name="compressorSustainSlider" min="0" max="100" value="0" data-instance-param="/rnbo/inst/4/params/sustain" oninput="sendSliderValue('compressorSustainSlider')">
+                <span id="compressorSustainValue">0</span><br><br>
+            </div>
+            <div id="playbackControls">
+                <h2>Playback Controls 1</h2>
+                <button type="button" id="playButton" data-instance-param="/rnbo/inst/5/messages/in/in1" onclick="sendButtonValue('playButton')">Play</button>
+                <button type="button" id="stopButton" data-instance-param="/rnbo/inst/5/messages/in/in2" onclick="sendButtonValue('stopButton')">Stop</button>
+                <button type="button" id="loopButton" data-instance-param="/rnbo/inst/5/messages/in/in3" onclick="toggleLoopButton('loopButton')">Loop</button>
+                <label for="fileDropdown">Select File:</label>
+                <select id="fileDropdown" name="fileDropdown" data-instance-param="/rnbo/inst/5/data_refs/buff" onchange="sendDropdownValue('fileDropdown')">
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <label for="soundVolumeSlider">Sound Volume:</label>
+                <input type="range" id="soundVolumeSlider" name="soundVolumeSlider" min="0" max="158" value="0" data-instance-param="/rnbo/inst/5/params/soundvol" oninput="sendSliderValue('soundVolumeSlider')">
+                <span id="soundVolumeValue">0</span><br><br>
+            </div>
+            <div id="playbackControls2">
+                <h2>Playback Controls 2</h2>
+                <button type="button" id="playButton2" data-instance-param="/rnbo/inst/6/messages/in/in1" onclick="sendButtonValue('playButton2')">Play</button>
+                <button type="button" id="stopButton2" data-instance-param="/rnbo/inst/6/messages/in/in2" onclick="sendButtonValue('stopButton2')">Stop</button>
+                <button type="button" id="loopButton2" data-instance-param="/rnbo/inst/6/messages/in/in3" onclick="toggleLoopButton('loopButton2')">Loop</button>
+                <label for="fileDropdown2">Select File:</label>
+                <select id="fileDropdown2" name="fileDropdown2" data-instance-param="/rnbo/inst/6/data_refs/buff" onchange="sendDropdownValue('fileDropdown2')">
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <label for="soundVolumeSlider2">Sound Volume:</label>
+                <input type="range" id="soundVolumeSlider2" name="soundVolumeSlider2" min="0" max="158" value="0" data-instance-param="/rnbo/inst/6/params/soundvol" oninput="sendSliderValue('soundVolumeSlider2')">
+                <span id="soundVolumeValue2">0</span><br><br>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
