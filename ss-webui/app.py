@@ -133,4 +133,4 @@ def index():
         return "Template not found", 404
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=80)  # Listen on all network interfaces
+    app.run(debug=False, host='0.0.0.0', port=8080)  # Listen on all network interfaces
