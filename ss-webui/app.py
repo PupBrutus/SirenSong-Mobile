@@ -6,7 +6,7 @@ app = Flask(__name__, template_folder='templates')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    server = '192.168.3.105'
+    server = '127.0.0.1'
     port = '1234'
     binural_output_gain_value = 0
     binural_frequency_value = 0
