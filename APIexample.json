@@ -1,0 +1,4569 @@
+{
+  "FULL_PATH": "/rnbo",
+  "CONTENTS": {
+    "listeners": {
+      "FULL_PATH": "/rnbo/listeners",
+      "CONTENTS": {
+        "entries": {
+          "FULL_PATH": "/rnbo/listeners/entries",
+          "TYPE": "",
+          "VALUE": [],
+          "ACCESS": 1,
+          "CLIPMODE": "none",
+          "EXTENDED_TYPE": "list",
+          "DESCRIPTION": "list of OSC listeners"
+        },
+        "add": {
+          "FULL_PATH": "/rnbo/listeners/add",
+          "TYPE": "s",
+          "VALUE": "",
+          "ACCESS": 2,
+          "CLIPMODE": "none",
+          "DESCRIPTION": "add OSC UDP listener: \"[ip:]port\""
+        },
+        "del": {
+          "FULL_PATH": "/rnbo/listeners/del",
+          "TYPE": "s",
+          "VALUE": "",
+          "ACCESS": 2,
+          "CLIPMODE": "none",
+          "DESCRIPTION": "delete OSC UDP listener: \"[ip:]port\""
+        },
+        "clear": {
+          "FULL_PATH": "/rnbo/listeners/clear",
+          "TYPE": "I",
+          "VALUE": null,
+          "ACCESS": 2,
+          "CLIPMODE": "none",
+          "DESCRIPTION": "clear all OSC UDP listeners"
+        }
+      }
+    },
+    "info": {
+      "FULL_PATH": "/rnbo/info",
+      "DESCRIPTION": "information about RNBO and the running system",
+      "CONTENTS": {
+        "version": {
+          "FULL_PATH": "/rnbo/info/version",
+          "TYPE": "s",
+          "VALUE": "1.3.3",
+          "ACCESS": 1,
+          "CLIPMODE": "none"
+        },
+        "system_name": {
+          "FULL_PATH": "/rnbo/info/system_name",
+          "TYPE": "s",
+          "VALUE": "Linux",
+          "ACCESS": 1,
+          "CLIPMODE": "none"
+        },
+        "system_processor": {
+          "FULL_PATH": "/rnbo/info/system_processor",
+          "TYPE": "s",
+          "VALUE": "armv7",
+          "ACCESS": 1,
+          "CLIPMODE": "none"
+        },
+        "system_os_name": {
+          "FULL_PATH": "/rnbo/info/system_os_name",
+          "TYPE": "s",
+          "VALUE": "Raspbian GNU/Linux 12 (bookworm)",
+          "ACCESS": 1,
+          "CLIPMODE": "none"
+        },
+        "system_id": {
+          "FULL_PATH": "/rnbo/info/system_id",
+          "TYPE": "s",
+          "VALUE": "d773a3ed-ec7f-46de-a543-8bd1290caf15",
+          "ACCESS": 1,
+          "CLIPMODE": "none",
+          "DESCRIPTION": "a unique, one time generated id for this system"
+        },
+        "compiler_version": {
+          "FULL_PATH": "/rnbo/info/compiler_version",
+          "TYPE": "s",
+          "VALUE": "12.2.0",
+          "ACCESS": 1,
+          "CLIPMODE": "none",
+          "DESCRIPTION": "the version of the compiler that this executable was built with"
+        },
+        "compiler_id": {
+          "FULL_PATH": "/rnbo/info/compiler_id",
+          "TYPE": "s",
+          "VALUE": "GNU",
+          "ACCESS": 1,
+          "CLIPMODE": "none",
+          "DESCRIPTION": "the id of the compiler that this executable was built with"
+        },
+        "disk_bytes_available": {
+          "FULL_PATH": "/rnbo/info/disk_bytes_available",
+          "TYPE": "s",
+          "VALUE": "57322340352",
+          "ACCESS": 1,
+          "CLIPMODE": "none",
+          "DESCRIPTION": "a byte count (as a string) of the bytes available in the compile cache dir"
+        },
+        "datafile_dir_mtime": {
+          "FULL_PATH": "/rnbo/info/datafile_dir_mtime",
+          "TYPE": "s",
+          "VALUE": "2024-11-19T11:33:12Z",
+          "ACCESS": 1,
+          "CLIPMODE": "none",
+          "DESCRIPTION": "the last modification time of the datafile directory, as a string representation, time since epoch"
+        },
+        "supported_cmds": {
+          "FULL_PATH": "/rnbo/info/supported_cmds",
+          "TYPE": "ssssssss",
+          "VALUE": [
+            "file_write_extended",
+            "file_read",
+            "file_exists",
+            "compile-with_config_file",
+            "compile-with_instance_and_name",
+            "instance_load-multi",
+            "patcherstore",
+            "patcherfilestore"
+          ],
+          "ACCESS": 1,
+          "CLIPMODE": "none",
+          "EXTENDED_TYPE": "list",
+          "DESCRIPTION": "details about post 1.0 commands added"
+        },
+        "unsupported_cmds": {
+          "FULL_PATH": "/rnbo/info/unsupported_cmds",
+          "TYPE": "",
+          "VALUE": [],
+          "ACCESS": 1,
+          "CLIPMODE": "none",
+          "EXTENDED_TYPE": "list",
+          "DESCRIPTION": "details about post 1.0 commands removed"
+        },
+        "update": {
+          "FULL_PATH": "/rnbo/info/update",
+          "DESCRIPTION": "Self upgrade/downgrade",
+          "CONTENTS": {
+            "state": {
+              "FULL_PATH": "/rnbo/info/update/state",
+              "TYPE": "s",
+              "VALUE": "idle",
+              "RANGE": [
+                {
+                  "VALS": [
+                    "idle",
+                    "active",
+                    "failed"
+                  ]
+                }
+              ],
+              "ACCESS": 1,
+              "CLIPMODE": "both",
+              "DESCRIPTION": "Update state"
+            },
+            "status": {
+              "FULL_PATH": "/rnbo/info/update/status",
+              "TYPE": "s",
+              "VALUE": "querying outdated package count complete",
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "Latest update status"
+            },
+            "outdated": {
+              "FULL_PATH": "/rnbo/info/update/outdated",
+              "TYPE": "i",
+              "VALUE": 9,
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "Number of outdated packages detected on the system"
+            },
+            "supported": {
+              "FULL_PATH": "/rnbo/info/update/supported",
+              "TYPE": "T",
+              "VALUE": null,
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "Does this runner support remote upgrade/downgrade"
+            }
+          }
+        }
+      }
+    },
+    "cmd": {
+      "FULL_PATH": "/rnbo/cmd",
+      "TYPE": "s",
+      "VALUE": "",
+      "ACCESS": 2,
+      "CLIPMODE": "none",
+      "DESCRIPTION": "command handler"
+    },
+    "resp": {
+      "FULL_PATH": "/rnbo/resp",
+      "TYPE": "s",
+      "VALUE": "",
+      "ACCESS": 1,
+      "CLIPMODE": "none",
+      "DESCRIPTION": "command response"
+    },
+    "jack": {
+      "FULL_PATH": "/rnbo/jack",
+      "CONTENTS": {
+        "info": {
+          "FULL_PATH": "/rnbo/jack/info",
+          "CONTENTS": {
+            "is_active": {
+              "FULL_PATH": "/rnbo/jack/info/is_active",
+              "TYPE": "T",
+              "VALUE": null,
+              "ACCESS": 3,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "Gives the actual status of the jack server being active or not"
+            },
+            "ports": {
+              "FULL_PATH": "/rnbo/jack/info/ports",
+              "CONTENTS": {
+                "audio": {
+                  "FULL_PATH": "/rnbo/jack/info/ports/audio",
+                  "CONTENTS": {
+                    "sinks": {
+                      "FULL_PATH": "/rnbo/jack/info/ports/audio/sinks",
+                      "TYPE": "sssssss",
+                      "VALUE": [
+                        "system:playback_1",
+                        "system:playback_2",
+                        "Binaural-0:in1",
+                        "PitchShift-1:in1",
+                        "PitchShift-1:in2",
+                        "Compressor-4:in1",
+                        "Compressor-4:in2"
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list"
+                    },
+                    "sources": {
+                      "FULL_PATH": "/rnbo/jack/info/ports/audio/sources",
+                      "TYPE": "sssssssssssss",
+                      "VALUE": [
+                        "system:capture_1",
+                        "Binaural-0:out1",
+                        "Binaural-0:out2",
+                        "PitchShift-1:out1",
+                        "PitchShift-1:out2",
+                        "ToneGen-2:out1",
+                        "PinkGen-3:out1",
+                        "Compressor-4:out1",
+                        "Compressor-4:out2",
+                        "SoundFile-5:out1",
+                        "SoundFile-5:out2",
+                        "SoundFile-6:out1",
+                        "SoundFile-6:out2"
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list"
+                    }
+                  }
+                },
+                "midi": {
+                  "FULL_PATH": "/rnbo/jack/info/ports/midi",
+                  "CONTENTS": {
+                    "sinks": {
+                      "FULL_PATH": "/rnbo/jack/info/ports/midi/sinks",
+                      "TYPE": "sssssssss",
+                      "VALUE": [
+                        "system:midi_playback_1",
+                        "rnbo-control:midiin",
+                        "Binaural-0:midiin1",
+                        "PitchShift-1:midiin1",
+                        "ToneGen-2:midiin1",
+                        "PinkGen-3:midiin1",
+                        "Compressor-4:midiin1",
+                        "SoundFile-5:midiin1",
+                        "SoundFile-6:midiin1"
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list"
+                    },
+                    "sources": {
+                      "FULL_PATH": "/rnbo/jack/info/ports/midi/sources",
+                      "TYPE": "sssssssss",
+                      "VALUE": [
+                        "system:midi_capture_1",
+                        "jack-transport-link:clock",
+                        "Binaural-0:midiout1",
+                        "PitchShift-1:midiout1",
+                        "ToneGen-2:midiout1",
+                        "PinkGen-3:midiout1",
+                        "Compressor-4:midiout1",
+                        "SoundFile-5:midiout1",
+                        "SoundFile-6:midiout1"
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list"
+                    }
+                  }
+                },
+                "aliases": {
+                  "FULL_PATH": "/rnbo/jack/info/ports/aliases",
+                  "DESCRIPTION": "Ports and a list of their aliases",
+                  "CONTENTS": {
+                    "system:capture_1": {
+                      "FULL_PATH": "/rnbo/jack/info/ports/aliases/system:capture_1",
+                      "TYPE": "s",
+                      "VALUE": [
+                        "alsa_pcm:hw:1:out1"
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list"
+                    },
+                    "system:playback_1": {
+                      "FULL_PATH": "/rnbo/jack/info/ports/aliases/system:playback_1",
+                      "TYPE": "s",
+                      "VALUE": [
+                        "alsa_pcm:hw:1:in1"
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list"
+                    },
+                    "system:playback_2": {
+                      "FULL_PATH": "/rnbo/jack/info/ports/aliases/system:playback_2",
+                      "TYPE": "s",
+                      "VALUE": [
+                        "alsa_pcm:hw:1:in2"
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list"
+                    },
+                    "system:midi_capture_1": {
+                      "FULL_PATH": "/rnbo/jack/info/ports/aliases/system:midi_capture_1",
+                      "TYPE": "ss",
+                      "VALUE": [
+                        "alsa_pcm:Midi-Through/midi_playback_1",
+                        "Midi-Through:midi/playback_1"
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list"
+                    },
+                    "system:midi_playback_1": {
+                      "FULL_PATH": "/rnbo/jack/info/ports/aliases/system:midi_playback_1",
+                      "TYPE": "ss",
+                      "VALUE": [
+                        "alsa_pcm:Midi-Through/midi_capture_1",
+                        "Midi-Through:midi/capture_1"
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list"
+                    },
+                    "Binaural-0:midiout1": {
+                      "FULL_PATH": "/rnbo/jack/info/ports/aliases/Binaural-0:midiout1",
+                      "TYPE": "s",
+                      "VALUE": [
+                        "Binaural-0:rnbomidiout1"
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list"
+                    },
+                    "PitchShift-1:midiout1": {
+                      "FULL_PATH": "/rnbo/jack/info/ports/aliases/PitchShift-1:midiout1",
+                      "TYPE": "s",
+                      "VALUE": [
+                        "PitchShift-1:rnbomidiout1"
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list"
+                    },
+                    "ToneGen-2:midiout1": {
+                      "FULL_PATH": "/rnbo/jack/info/ports/aliases/ToneGen-2:midiout1",
+                      "TYPE": "s",
+                      "VALUE": [
+                        "ToneGen-2:rnbomidiout1"
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list"
+                    },
+                    "PinkGen-3:midiout1": {
+                      "FULL_PATH": "/rnbo/jack/info/ports/aliases/PinkGen-3:midiout1",
+                      "TYPE": "s",
+                      "VALUE": [
+                        "PinkGen-3:rnbomidiout1"
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list"
+                    },
+                    "Compressor-4:midiout1": {
+                      "FULL_PATH": "/rnbo/jack/info/ports/aliases/Compressor-4:midiout1",
+                      "TYPE": "s",
+                      "VALUE": [
+                        "Compressor-4:rnbomidiout1"
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list"
+                    },
+                    "SoundFile-5:midiout1": {
+                      "FULL_PATH": "/rnbo/jack/info/ports/aliases/SoundFile-5:midiout1",
+                      "TYPE": "s",
+                      "VALUE": [
+                        "SoundFile-5:rnbomidiout1"
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list"
+                    },
+                    "SoundFile-6:midiout1": {
+                      "FULL_PATH": "/rnbo/jack/info/ports/aliases/SoundFile-6:midiout1",
+                      "TYPE": "s",
+                      "VALUE": [
+                        "SoundFile-6:rnbomidiout1"
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list"
+                    }
+                  }
+                }
+              }
+            },
+            "alsa_cards": {
+              "FULL_PATH": "/rnbo/jack/info/alsa_cards",
+              "CONTENTS": {
+                "hw:0": {
+                  "FULL_PATH": "/rnbo/jack/info/alsa_cards/hw:0",
+                  "TYPE": "s",
+                  "VALUE": "Dummy - Dummy\nDummy 1",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none"
+                },
+                "hw:1": {
+                  "FULL_PATH": "/rnbo/jack/info/alsa_cards/hw:1",
+                  "TYPE": "s",
+                  "VALUE": "USB-Audio - USB PnP Audio Device\nUSB PnP Audio Device at usb-xhci-hcd.1-2, full speed",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none"
+                },
+                "hw:2": {
+                  "FULL_PATH": "/rnbo/jack/info/alsa_cards/hw:2",
+                  "TYPE": "s",
+                  "VALUE": "vc4-hdmi - vc4-hdmi-0\nvc4-hdmi-0",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none"
+                },
+                "hw:3": {
+                  "FULL_PATH": "/rnbo/jack/info/alsa_cards/hw:3",
+                  "TYPE": "s",
+                  "VALUE": "vc4-hdmi - vc4-hdmi-1\nvc4-hdmi-1",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none"
+                },
+                "hw:Device": {
+                  "FULL_PATH": "/rnbo/jack/info/alsa_cards/hw:Device",
+                  "TYPE": "s",
+                  "VALUE": "USB-Audio - USB PnP Audio Device\nUSB PnP Audio Device at usb-xhci-hcd.1-2, full speed",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none"
+                },
+                "hw:Dummy": {
+                  "FULL_PATH": "/rnbo/jack/info/alsa_cards/hw:Dummy",
+                  "TYPE": "s",
+                  "VALUE": "Dummy - Dummy\nDummy 1",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none"
+                },
+                "hw:vc4hdmi0": {
+                  "FULL_PATH": "/rnbo/jack/info/alsa_cards/hw:vc4hdmi0",
+                  "TYPE": "s",
+                  "VALUE": "vc4-hdmi - vc4-hdmi-0\nvc4-hdmi-0",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none"
+                },
+                "hw:vc4hdmi1": {
+                  "FULL_PATH": "/rnbo/jack/info/alsa_cards/hw:vc4hdmi1",
+                  "TYPE": "s",
+                  "VALUE": "vc4-hdmi - vc4-hdmi-1\nvc4-hdmi-1",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none"
+                }
+              }
+            },
+            "is_realtime": {
+              "FULL_PATH": "/rnbo/jack/info/is_realtime",
+              "TYPE": "T",
+              "VALUE": null,
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "indicates if jack is running in realtime mode or not"
+            },
+            "owns_server": {
+              "FULL_PATH": "/rnbo/jack/info/owns_server",
+              "TYPE": "T",
+              "VALUE": null,
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "indicates if the runner manages/owns the server or not"
+            },
+            "cpu_load": {
+              "FULL_PATH": "/rnbo/jack/info/cpu_load",
+              "TYPE": "f",
+              "VALUE": 5.706850051879883,
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "The current CPU load percent estimated by JACK"
+            },
+            "xrun_count": {
+              "FULL_PATH": "/rnbo/jack/info/xrun_count",
+              "TYPE": "i",
+              "VALUE": 0,
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "The count of xruns since the last server start"
+            }
+          }
+        },
+        "connections": {
+          "FULL_PATH": "/rnbo/jack/connections",
+          "DESCRIPTION": "Jack connections: sources and their connected sinks, disconnect and connect utilities",
+          "CONTENTS": {
+            "audio": {
+              "FULL_PATH": "/rnbo/jack/connections/audio",
+              "CONTENTS": {
+                "system:capture_1": {
+                  "FULL_PATH": "/rnbo/jack/connections/audio/system:capture_1",
+                  "TYPE": "ss",
+                  "VALUE": [
+                    "Compressor-4:in1",
+                    "Compressor-4:in2"
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "Binaural-0:out1": {
+                  "FULL_PATH": "/rnbo/jack/connections/audio/Binaural-0:out1",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "system:playback_1"
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "Binaural-0:out2": {
+                  "FULL_PATH": "/rnbo/jack/connections/audio/Binaural-0:out2",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "system:playback_2"
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "PitchShift-1:out1": {
+                  "FULL_PATH": "/rnbo/jack/connections/audio/PitchShift-1:out1",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "Binaural-0:in1"
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "PitchShift-1:out2": {
+                  "FULL_PATH": "/rnbo/jack/connections/audio/PitchShift-1:out2",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "Binaural-0:in1"
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "ToneGen-2:out1": {
+                  "FULL_PATH": "/rnbo/jack/connections/audio/ToneGen-2:out1",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "Binaural-0:in1"
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "PinkGen-3:out1": {
+                  "FULL_PATH": "/rnbo/jack/connections/audio/PinkGen-3:out1",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "Binaural-0:in1"
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "Compressor-4:out1": {
+                  "FULL_PATH": "/rnbo/jack/connections/audio/Compressor-4:out1",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "PitchShift-1:in1"
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "Compressor-4:out2": {
+                  "FULL_PATH": "/rnbo/jack/connections/audio/Compressor-4:out2",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "PitchShift-1:in2"
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "SoundFile-5:out1": {
+                  "FULL_PATH": "/rnbo/jack/connections/audio/SoundFile-5:out1",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "Binaural-0:in1"
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "SoundFile-5:out2": {
+                  "FULL_PATH": "/rnbo/jack/connections/audio/SoundFile-5:out2",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "Binaural-0:in1"
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "SoundFile-6:out1": {
+                  "FULL_PATH": "/rnbo/jack/connections/audio/SoundFile-6:out1",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "Binaural-0:in1"
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "SoundFile-6:out2": {
+                  "FULL_PATH": "/rnbo/jack/connections/audio/SoundFile-6:out2",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "Binaural-0:in1"
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                }
+              }
+            },
+            "midi": {
+              "FULL_PATH": "/rnbo/jack/connections/midi",
+              "CONTENTS": {
+                "system:midi_capture_1": {
+                  "FULL_PATH": "/rnbo/jack/connections/midi/system:midi_capture_1",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "jack-transport-link:clock": {
+                  "FULL_PATH": "/rnbo/jack/connections/midi/jack-transport-link:clock",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "Binaural-0:midiout1": {
+                  "FULL_PATH": "/rnbo/jack/connections/midi/Binaural-0:midiout1",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "PitchShift-1:midiout1": {
+                  "FULL_PATH": "/rnbo/jack/connections/midi/PitchShift-1:midiout1",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "ToneGen-2:midiout1": {
+                  "FULL_PATH": "/rnbo/jack/connections/midi/ToneGen-2:midiout1",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "PinkGen-3:midiout1": {
+                  "FULL_PATH": "/rnbo/jack/connections/midi/PinkGen-3:midiout1",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "Compressor-4:midiout1": {
+                  "FULL_PATH": "/rnbo/jack/connections/midi/Compressor-4:midiout1",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "SoundFile-5:midiout1": {
+                  "FULL_PATH": "/rnbo/jack/connections/midi/SoundFile-5:midiout1",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "SoundFile-6:midiout1": {
+                  "FULL_PATH": "/rnbo/jack/connections/midi/SoundFile-6:midiout1",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                }
+              }
+            },
+            "connect": {
+              "FULL_PATH": "/rnbo/jack/connections/connect",
+              "TYPE": "",
+              "VALUE": [],
+              "ACCESS": 3,
+              "CLIPMODE": "none",
+              "EXTENDED_TYPE": "list",
+              "DESCRIPTION": "connect 2 jack ports by name: source destination"
+            },
+            "disconnect": {
+              "FULL_PATH": "/rnbo/jack/connections/disconnect",
+              "TYPE": "",
+              "VALUE": [],
+              "ACCESS": 3,
+              "CLIPMODE": "none",
+              "EXTENDED_TYPE": "list",
+              "DESCRIPTION": "disconnect 2 jack ports by name: source destination"
+            }
+          }
+        },
+        "config": {
+          "FULL_PATH": "/rnbo/jack/config",
+          "DESCRIPTION": "Jack configuration parameters",
+          "CONTENTS": {
+            "card": {
+              "FULL_PATH": "/rnbo/jack/config/card",
+              "TYPE": "s",
+              "VALUE": "hw:1",
+              "RANGE": [
+                {
+                  "VALS": [
+                    "hw:0",
+                    "hw:1",
+                    "hw:2",
+                    "hw:3",
+                    "hw:Device",
+                    "hw:Dummy",
+                    "hw:vc4hdmi0",
+                    "hw:vc4hdmi1"
+                  ]
+                }
+              ],
+              "ACCESS": 3,
+              "CLIPMODE": "both",
+              "DESCRIPTION": "ALSA device name"
+            },
+            "num_periods": {
+              "FULL_PATH": "/rnbo/jack/config/num_periods",
+              "TYPE": "i",
+              "VALUE": 2,
+              "RANGE": [
+                {
+                  "VALS": [
+                    2,
+                    3,
+                    4
+                  ]
+                }
+              ],
+              "ACCESS": 3,
+              "CLIPMODE": "both",
+              "DESCRIPTION": "Number of periods of playback latency"
+            },
+            "midi_system": {
+              "FULL_PATH": "/rnbo/jack/config/midi_system",
+              "TYPE": "s",
+              "VALUE": "seq",
+              "RANGE": [
+                {
+                  "VALS": [
+                    "seq",
+                    "raw"
+                  ]
+                }
+              ],
+              "ACCESS": 3,
+              "CLIPMODE": "both",
+              "DESCRIPTION": "Which ALSA MIDI system to provide access to."
+            },
+            "extra": {
+              "FULL_PATH": "/rnbo/jack/config/extra",
+              "TYPE": "s",
+              "VALUE": "",
+              "ACCESS": 3,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "Extra args to be passed to jack when creating the server, these are appended after the args generated by sample_rate, period_frames, etc."
+            },
+            "persist_extra": {
+              "FULL_PATH": "/rnbo/jack/config/persist_extra",
+              "TYPE": "T",
+              "VALUE": null,
+              "ACCESS": 3,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "Should the runner save/restore \"extra\" args associated with your \"card\", useful if you switch cards."
+            },
+            "period_frames": {
+              "FULL_PATH": "/rnbo/jack/config/period_frames",
+              "TYPE": "i",
+              "VALUE": 256,
+              "RANGE": [
+                {
+                  "VALS": [
+                    32,
+                    64,
+                    128,
+                    256,
+                    512,
+                    1024
+                  ]
+                }
+              ],
+              "ACCESS": 3,
+              "CLIPMODE": "both",
+              "DESCRIPTION": "Frames per period"
+            },
+            "sample_rate": {
+              "FULL_PATH": "/rnbo/jack/config/sample_rate",
+              "TYPE": "f",
+              "VALUE": 48000,
+              "RANGE": [
+                {
+                  "MIN": 22050
+                }
+              ],
+              "ACCESS": 3,
+              "CLIPMODE": "both",
+              "DESCRIPTION": "Sample rate"
+            }
+          }
+        },
+        "control": {
+          "FULL_PATH": "/rnbo/jack/control",
+          "CONTENTS": {
+            "midi_in": {
+              "FULL_PATH": "/rnbo/jack/control/midi_in",
+              "TYPE": "",
+              "VALUE": [],
+              "ACCESS": 3,
+              "CLIPMODE": "none",
+              "EXTENDED_TYPE": "list",
+              "DESCRIPTION": "MIDI connection to use for control (patcher selection)"
+            }
+          }
+        },
+        "active": {
+          "FULL_PATH": "/rnbo/jack/active",
+          "TYPE": "T",
+          "VALUE": null,
+          "ACCESS": 3,
+          "CLIPMODE": "none"
+        },
+        "restart": {
+          "FULL_PATH": "/rnbo/jack/restart",
+          "TYPE": "F",
+          "VALUE": null,
+          "ACCESS": 2,
+          "CLIPMODE": "none"
+        },
+        "transport": {
+          "FULL_PATH": "/rnbo/jack/transport",
+          "CONTENTS": {
+            "bpm": {
+              "FULL_PATH": "/rnbo/jack/transport/bpm",
+              "TYPE": "f",
+              "VALUE": 100,
+              "ACCESS": 3,
+              "CLIPMODE": "none"
+            },
+            "sync": {
+              "FULL_PATH": "/rnbo/jack/transport/sync",
+              "TYPE": "T",
+              "VALUE": null,
+              "ACCESS": 3,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "should the runner sync to/from jack's transport or not"
+            },
+            "rolling": {
+              "FULL_PATH": "/rnbo/jack/transport/rolling",
+              "TYPE": "F",
+              "VALUE": null,
+              "ACCESS": 3,
+              "CLIPMODE": "none"
+            }
+          }
+        }
+      }
+    },
+    "patchers": {
+      "FULL_PATH": "/rnbo/patchers",
+      "DESCRIPTION": "patcher descriptions",
+      "CONTENTS": {
+        "Binaural": {
+          "FULL_PATH": "/rnbo/patchers/Binaural",
+          "CONTENTS": {
+            "io": {
+              "FULL_PATH": "/rnbo/patchers/Binaural/io",
+              "TYPE": "iiii",
+              "VALUE": [
+                1,
+                2,
+                0,
+                0
+              ],
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "EXTENDED_TYPE": "list",
+              "DESCRIPTION": "input and output counts: audio ins, audio outs, midi ins, midi outs"
+            },
+            "created_at": {
+              "FULL_PATH": "/rnbo/patchers/Binaural/created_at",
+              "TYPE": "s",
+              "VALUE": "2024-11-19 02:56:39",
+              "ACCESS": 1,
+              "CLIPMODE": "none"
+            },
+            "destroy": {
+              "FULL_PATH": "/rnbo/patchers/Binaural/destroy",
+              "TYPE": "I",
+              "VALUE": null,
+              "ACCESS": 2,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "delete this patcher"
+            },
+            "rename": {
+              "FULL_PATH": "/rnbo/patchers/Binaural/rename",
+              "TYPE": "s",
+              "VALUE": "",
+              "ACCESS": 2,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "rename this patcher"
+            }
+          }
+        },
+        "Compressor": {
+          "FULL_PATH": "/rnbo/patchers/Compressor",
+          "CONTENTS": {
+            "io": {
+              "FULL_PATH": "/rnbo/patchers/Compressor/io",
+              "TYPE": "iiii",
+              "VALUE": [
+                2,
+                2,
+                1,
+                0
+              ],
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "EXTENDED_TYPE": "list",
+              "DESCRIPTION": "input and output counts: audio ins, audio outs, midi ins, midi outs"
+            },
+            "created_at": {
+              "FULL_PATH": "/rnbo/patchers/Compressor/created_at",
+              "TYPE": "s",
+              "VALUE": "2024-11-19 02:56:29",
+              "ACCESS": 1,
+              "CLIPMODE": "none"
+            },
+            "destroy": {
+              "FULL_PATH": "/rnbo/patchers/Compressor/destroy",
+              "TYPE": "I",
+              "VALUE": null,
+              "ACCESS": 2,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "delete this patcher"
+            },
+            "rename": {
+              "FULL_PATH": "/rnbo/patchers/Compressor/rename",
+              "TYPE": "s",
+              "VALUE": "",
+              "ACCESS": 2,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "rename this patcher"
+            }
+          }
+        },
+        "PinkGen": {
+          "FULL_PATH": "/rnbo/patchers/PinkGen",
+          "CONTENTS": {
+            "io": {
+              "FULL_PATH": "/rnbo/patchers/PinkGen/io",
+              "TYPE": "iiii",
+              "VALUE": [
+                0,
+                1,
+                0,
+                0
+              ],
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "EXTENDED_TYPE": "list",
+              "DESCRIPTION": "input and output counts: audio ins, audio outs, midi ins, midi outs"
+            },
+            "created_at": {
+              "FULL_PATH": "/rnbo/patchers/PinkGen/created_at",
+              "TYPE": "s",
+              "VALUE": "2024-11-19 02:55:53",
+              "ACCESS": 1,
+              "CLIPMODE": "none"
+            },
+            "destroy": {
+              "FULL_PATH": "/rnbo/patchers/PinkGen/destroy",
+              "TYPE": "I",
+              "VALUE": null,
+              "ACCESS": 2,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "delete this patcher"
+            },
+            "rename": {
+              "FULL_PATH": "/rnbo/patchers/PinkGen/rename",
+              "TYPE": "s",
+              "VALUE": "",
+              "ACCESS": 2,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "rename this patcher"
+            }
+          }
+        },
+        "PitchShift": {
+          "FULL_PATH": "/rnbo/patchers/PitchShift",
+          "CONTENTS": {
+            "io": {
+              "FULL_PATH": "/rnbo/patchers/PitchShift/io",
+              "TYPE": "iiii",
+              "VALUE": [
+                2,
+                2,
+                1,
+                0
+              ],
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "EXTENDED_TYPE": "list",
+              "DESCRIPTION": "input and output counts: audio ins, audio outs, midi ins, midi outs"
+            },
+            "created_at": {
+              "FULL_PATH": "/rnbo/patchers/PitchShift/created_at",
+              "TYPE": "s",
+              "VALUE": "2024-11-19 02:56:18",
+              "ACCESS": 1,
+              "CLIPMODE": "none"
+            },
+            "destroy": {
+              "FULL_PATH": "/rnbo/patchers/PitchShift/destroy",
+              "TYPE": "I",
+              "VALUE": null,
+              "ACCESS": 2,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "delete this patcher"
+            },
+            "rename": {
+              "FULL_PATH": "/rnbo/patchers/PitchShift/rename",
+              "TYPE": "s",
+              "VALUE": "",
+              "ACCESS": 2,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "rename this patcher"
+            }
+          }
+        },
+        "SoundFile": {
+          "FULL_PATH": "/rnbo/patchers/SoundFile",
+          "CONTENTS": {
+            "io": {
+              "FULL_PATH": "/rnbo/patchers/SoundFile/io",
+              "TYPE": "iiii",
+              "VALUE": [
+                0,
+                2,
+                0,
+                0
+              ],
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "EXTENDED_TYPE": "list",
+              "DESCRIPTION": "input and output counts: audio ins, audio outs, midi ins, midi outs"
+            },
+            "created_at": {
+              "FULL_PATH": "/rnbo/patchers/SoundFile/created_at",
+              "TYPE": "s",
+              "VALUE": "2024-11-19 02:55:35",
+              "ACCESS": 1,
+              "CLIPMODE": "none"
+            },
+            "destroy": {
+              "FULL_PATH": "/rnbo/patchers/SoundFile/destroy",
+              "TYPE": "I",
+              "VALUE": null,
+              "ACCESS": 2,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "delete this patcher"
+            },
+            "rename": {
+              "FULL_PATH": "/rnbo/patchers/SoundFile/rename",
+              "TYPE": "s",
+              "VALUE": "",
+              "ACCESS": 2,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "rename this patcher"
+            }
+          }
+        },
+        "ToneGen": {
+          "FULL_PATH": "/rnbo/patchers/ToneGen",
+          "CONTENTS": {
+            "io": {
+              "FULL_PATH": "/rnbo/patchers/ToneGen/io",
+              "TYPE": "iiii",
+              "VALUE": [
+                0,
+                1,
+                0,
+                0
+              ],
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "EXTENDED_TYPE": "list",
+              "DESCRIPTION": "input and output counts: audio ins, audio outs, midi ins, midi outs"
+            },
+            "created_at": {
+              "FULL_PATH": "/rnbo/patchers/ToneGen/created_at",
+              "TYPE": "s",
+              "VALUE": "2024-11-19 02:55:09",
+              "ACCESS": 1,
+              "CLIPMODE": "none"
+            },
+            "destroy": {
+              "FULL_PATH": "/rnbo/patchers/ToneGen/destroy",
+              "TYPE": "I",
+              "VALUE": null,
+              "ACCESS": 2,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "delete this patcher"
+            },
+            "rename": {
+              "FULL_PATH": "/rnbo/patchers/ToneGen/rename",
+              "TYPE": "s",
+              "VALUE": "",
+              "ACCESS": 2,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "rename this patcher"
+            }
+          }
+        }
+      }
+    },
+    "inst": {
+      "FULL_PATH": "/rnbo/inst",
+      "DESCRIPTION": "code export instances",
+      "CONTENTS": {
+        "0": {
+          "FULL_PATH": "/rnbo/inst/0",
+          "CONTENTS": {
+            "jack": {
+              "FULL_PATH": "/rnbo/inst/0/jack",
+              "CONTENTS": {
+                "connections": {
+                  "FULL_PATH": "/rnbo/inst/0/jack/connections",
+                  "CONTENTS": {
+                    "audio": {
+                      "FULL_PATH": "/rnbo/inst/0/jack/connections/audio",
+                      "CONTENTS": {
+                        "sinks": {
+                          "FULL_PATH": "/rnbo/inst/0/jack/connections/audio/sinks",
+                          "CONTENTS": {
+                            "in1": {
+                              "FULL_PATH": "/rnbo/inst/0/jack/connections/audio/sinks/in1",
+                              "TYPE": "ssssssss",
+                              "VALUE": [
+                                "PinkGen-3:out1",
+                                "PitchShift-1:out1",
+                                "PitchShift-1:out2",
+                                "SoundFile-5:out1",
+                                "SoundFile-5:out2",
+                                "SoundFile-6:out1",
+                                "SoundFile-6:out2",
+                                "ToneGen-2:out1"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        },
+                        "sources": {
+                          "FULL_PATH": "/rnbo/inst/0/jack/connections/audio/sources",
+                          "CONTENTS": {
+                            "out1": {
+                              "FULL_PATH": "/rnbo/inst/0/jack/connections/audio/sources/out1",
+                              "TYPE": "s",
+                              "VALUE": [
+                                "system:playback_1"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            },
+                            "out2": {
+                              "FULL_PATH": "/rnbo/inst/0/jack/connections/audio/sources/out2",
+                              "TYPE": "s",
+                              "VALUE": [
+                                "system:playback_2"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "midi": {
+                      "FULL_PATH": "/rnbo/inst/0/jack/connections/midi",
+                      "CONTENTS": {
+                        "sinks": {
+                          "FULL_PATH": "/rnbo/inst/0/jack/connections/midi/sinks",
+                          "CONTENTS": {
+                            "midiin1": {
+                              "FULL_PATH": "/rnbo/inst/0/jack/connections/midi/sinks/midiin1",
+                              "TYPE": "",
+                              "VALUE": [],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        },
+                        "sources": {
+                          "FULL_PATH": "/rnbo/inst/0/jack/connections/midi/sources",
+                          "CONTENTS": {
+                            "midiout1": {
+                              "FULL_PATH": "/rnbo/inst/0/jack/connections/midi/sources/midiout1",
+                              "TYPE": "",
+                              "VALUE": [],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "name": {
+                  "FULL_PATH": "/rnbo/inst/0/jack/name",
+                  "TYPE": "s",
+                  "VALUE": "Binaural-0",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none"
+                },
+                "audio_ins": {
+                  "FULL_PATH": "/rnbo/inst/0/jack/audio_ins",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "Binaural-0:in1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "audio_outs": {
+                  "FULL_PATH": "/rnbo/inst/0/jack/audio_outs",
+                  "TYPE": "ss",
+                  "VALUE": [
+                    "Binaural-0:out1",
+                    "Binaural-0:out2"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "midi_ins": {
+                  "FULL_PATH": "/rnbo/inst/0/jack/midi_ins",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "Binaural-0:midiin1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "midi_outs": {
+                  "FULL_PATH": "/rnbo/inst/0/jack/midi_outs",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "Binaural-0:midiout1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                }
+              }
+            },
+            "name": {
+              "FULL_PATH": "/rnbo/inst/0/name",
+              "TYPE": "s",
+              "VALUE": "Binaural",
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "The name of the loaded patcher"
+            },
+            "params": {
+              "FULL_PATH": "/rnbo/inst/0/params",
+              "DESCRIPTION": "Parameter get/set",
+              "CONTENTS": {
+                "binuralfreq": {
+                  "FULL_PATH": "/rnbo/inst/0/params/binuralfreq",
+                  "TYPE": "f",
+                  "VALUE": 0,
+                  "RANGE": [
+                    {
+                      "MIN": 0,
+                      "MAX": 30
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/0/params/binuralfreq/index",
+                      "TYPE": "i",
+                      "VALUE": 0,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/0/params/binuralfreq/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/0/params/binuralfreq/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                },
+                "post-gain": {
+                  "FULL_PATH": "/rnbo/inst/0/params/post-gain",
+                  "TYPE": "f",
+                  "VALUE": 0,
+                  "RANGE": [
+                    {
+                      "MIN": 0,
+                      "MAX": 158
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/0/params/post-gain/index",
+                      "TYPE": "i",
+                      "VALUE": 1,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/0/params/post-gain/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/0/params/post-gain/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                }
+              }
+            },
+            "data_refs": {
+              "FULL_PATH": "/rnbo/inst/0/data_refs"
+            },
+            "presets": {
+              "FULL_PATH": "/rnbo/inst/0/presets",
+              "CONTENTS": {
+                "entries": {
+                  "FULL_PATH": "/rnbo/inst/0/presets/entries",
+                  "TYPE": "ssssss",
+                  "VALUE": [
+                    "0-Default",
+                    "1-Gamma",
+                    "2-Beta",
+                    "3-Alpha",
+                    "4-Theta",
+                    "5-Delta"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "A list of presets that can be loaded"
+                },
+                "save": {
+                  "FULL_PATH": "/rnbo/inst/0/presets/save",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Save the current settings as a preset with the given name"
+                },
+                "rename": {
+                  "FULL_PATH": "/rnbo/inst/0/presets/rename",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "rename a preset, arguments: oldname, newName"
+                },
+                "load": {
+                  "FULL_PATH": "/rnbo/inst/0/presets/load",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Load a preset with the given name"
+                },
+                "loaded": {
+                  "FULL_PATH": "/rnbo/inst/0/presets/loaded",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Indicates that a preset was loaded. A name with a / indiciates a set preset where the format is setname/setpresetname"
+                },
+                "delete": {
+                  "FULL_PATH": "/rnbo/inst/0/presets/delete",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Delete a preset with the given name"
+                },
+                "del": {
+                  "FULL_PATH": "/rnbo/inst/0/presets/del",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Delete a preset with the given name"
+                },
+                "initial": {
+                  "FULL_PATH": "/rnbo/inst/0/presets/initial",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Indicate a preset, by name, that should be loaded every time this patch is reloaded. Set to an empty string to load the last loaded preset instead"
+                },
+                "midi_channel": {
+                  "FULL_PATH": "/rnbo/inst/0/presets/midi_channel",
+                  "TYPE": "s",
+                  "VALUE": "none",
+                  "RANGE": [
+                    {
+                      "VALS": [
+                        "1",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "none",
+                        "omni"
+                      ]
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "DESCRIPTION": "Indicate MIDI channel, none or omni (all) that should be used for changing presets via Program Changes."
+                }
+              }
+            },
+            "midi": {
+              "FULL_PATH": "/rnbo/inst/0/midi",
+              "CONTENTS": {
+                "in": {
+                  "FULL_PATH": "/rnbo/inst/0/midi/in",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "midi events in to your RNBO patch"
+                },
+                "out": {
+                  "FULL_PATH": "/rnbo/inst/0/midi/out",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "midi events out of your RNBO patch"
+                },
+                "last": {
+                  "FULL_PATH": "/rnbo/inst/0/midi/last",
+                  "CONTENTS": {
+                    "value": {
+                      "FULL_PATH": "/rnbo/inst/0/midi/last/value",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "JSON encoded string representing the last MIDI mappable message seen by this instance, only reports if \"report\" is true"
+                    },
+                    "report": {
+                      "FULL_PATH": "/rnbo/inst/0/midi/last/report",
+                      "TYPE": "F",
+                      "VALUE": null,
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "Turn on/off publishing to the last \"value\" parameter"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "1": {
+          "FULL_PATH": "/rnbo/inst/1",
+          "CONTENTS": {
+            "jack": {
+              "FULL_PATH": "/rnbo/inst/1/jack",
+              "CONTENTS": {
+                "connections": {
+                  "FULL_PATH": "/rnbo/inst/1/jack/connections",
+                  "CONTENTS": {
+                    "audio": {
+                      "FULL_PATH": "/rnbo/inst/1/jack/connections/audio",
+                      "CONTENTS": {
+                        "sinks": {
+                          "FULL_PATH": "/rnbo/inst/1/jack/connections/audio/sinks",
+                          "CONTENTS": {
+                            "in1": {
+                              "FULL_PATH": "/rnbo/inst/1/jack/connections/audio/sinks/in1",
+                              "TYPE": "s",
+                              "VALUE": [
+                                "Compressor-4:out1"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            },
+                            "in2": {
+                              "FULL_PATH": "/rnbo/inst/1/jack/connections/audio/sinks/in2",
+                              "TYPE": "s",
+                              "VALUE": [
+                                "Compressor-4:out2"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        },
+                        "sources": {
+                          "FULL_PATH": "/rnbo/inst/1/jack/connections/audio/sources",
+                          "CONTENTS": {
+                            "out1": {
+                              "FULL_PATH": "/rnbo/inst/1/jack/connections/audio/sources/out1",
+                              "TYPE": "s",
+                              "VALUE": [
+                                "Binaural-0:in1"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            },
+                            "out2": {
+                              "FULL_PATH": "/rnbo/inst/1/jack/connections/audio/sources/out2",
+                              "TYPE": "s",
+                              "VALUE": [
+                                "Binaural-0:in1"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "midi": {
+                      "FULL_PATH": "/rnbo/inst/1/jack/connections/midi",
+                      "CONTENTS": {
+                        "sinks": {
+                          "FULL_PATH": "/rnbo/inst/1/jack/connections/midi/sinks",
+                          "CONTENTS": {
+                            "midiin1": {
+                              "FULL_PATH": "/rnbo/inst/1/jack/connections/midi/sinks/midiin1",
+                              "TYPE": "",
+                              "VALUE": [],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        },
+                        "sources": {
+                          "FULL_PATH": "/rnbo/inst/1/jack/connections/midi/sources",
+                          "CONTENTS": {
+                            "midiout1": {
+                              "FULL_PATH": "/rnbo/inst/1/jack/connections/midi/sources/midiout1",
+                              "TYPE": "",
+                              "VALUE": [],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "name": {
+                  "FULL_PATH": "/rnbo/inst/1/jack/name",
+                  "TYPE": "s",
+                  "VALUE": "PitchShift-1",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none"
+                },
+                "audio_ins": {
+                  "FULL_PATH": "/rnbo/inst/1/jack/audio_ins",
+                  "TYPE": "ss",
+                  "VALUE": [
+                    "PitchShift-1:in1",
+                    "PitchShift-1:in2"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "audio_outs": {
+                  "FULL_PATH": "/rnbo/inst/1/jack/audio_outs",
+                  "TYPE": "ss",
+                  "VALUE": [
+                    "PitchShift-1:out1",
+                    "PitchShift-1:out2"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "midi_ins": {
+                  "FULL_PATH": "/rnbo/inst/1/jack/midi_ins",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "PitchShift-1:midiin1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "midi_outs": {
+                  "FULL_PATH": "/rnbo/inst/1/jack/midi_outs",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "PitchShift-1:midiout1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                }
+              }
+            },
+            "name": {
+              "FULL_PATH": "/rnbo/inst/1/name",
+              "TYPE": "s",
+              "VALUE": "PitchShift",
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "The name of the loaded patcher"
+            },
+            "params": {
+              "FULL_PATH": "/rnbo/inst/1/params",
+              "DESCRIPTION": "Parameter get/set",
+              "CONTENTS": {
+                "transp": {
+                  "FULL_PATH": "/rnbo/inst/1/params/transp",
+                  "TYPE": "f",
+                  "VALUE": 0.04799938201904297,
+                  "RANGE": [
+                    {
+                      "MIN": -24,
+                      "MAX": 24
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/1/params/transp/index",
+                      "TYPE": "i",
+                      "VALUE": 0,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/1/params/transp/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0.5009999871253967,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/1/params/transp/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                },
+                "mix": {
+                  "FULL_PATH": "/rnbo/inst/1/params/mix",
+                  "TYPE": "f",
+                  "VALUE": 50,
+                  "RANGE": [
+                    {
+                      "MIN": 0,
+                      "MAX": 100
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/1/params/mix/index",
+                      "TYPE": "i",
+                      "VALUE": 1,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/1/params/mix/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0.5,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/1/params/mix/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                },
+                "spread": {
+                  "FULL_PATH": "/rnbo/inst/1/params/spread",
+                  "TYPE": "f",
+                  "VALUE": 0,
+                  "RANGE": [
+                    {
+                      "MIN": -100,
+                      "MAX": 100
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/1/params/spread/index",
+                      "TYPE": "i",
+                      "VALUE": 2,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/1/params/spread/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0.5,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/1/params/spread/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                },
+                "window": {
+                  "FULL_PATH": "/rnbo/inst/1/params/window",
+                  "TYPE": "f",
+                  "VALUE": 80,
+                  "RANGE": [
+                    {
+                      "MIN": 2,
+                      "MAX": 200
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/1/params/window/index",
+                      "TYPE": "i",
+                      "VALUE": 3,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/1/params/window/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0.39393940567970276,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/1/params/window/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                }
+              }
+            },
+            "data_refs": {
+              "FULL_PATH": "/rnbo/inst/1/data_refs"
+            },
+            "presets": {
+              "FULL_PATH": "/rnbo/inst/1/presets",
+              "CONTENTS": {
+                "entries": {
+                  "FULL_PATH": "/rnbo/inst/1/presets/entries",
+                  "TYPE": "ssssss",
+                  "VALUE": [
+                    "Default",
+                    "Detune",
+                    "Fivth+",
+                    "Fivth-",
+                    "Octave+",
+                    "Octave-"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "A list of presets that can be loaded"
+                },
+                "save": {
+                  "FULL_PATH": "/rnbo/inst/1/presets/save",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Save the current settings as a preset with the given name"
+                },
+                "rename": {
+                  "FULL_PATH": "/rnbo/inst/1/presets/rename",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "rename a preset, arguments: oldname, newName"
+                },
+                "load": {
+                  "FULL_PATH": "/rnbo/inst/1/presets/load",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Load a preset with the given name"
+                },
+                "loaded": {
+                  "FULL_PATH": "/rnbo/inst/1/presets/loaded",
+                  "TYPE": "s",
+                  "VALUE": "Default",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Indicates that a preset was loaded. A name with a / indiciates a set preset where the format is setname/setpresetname"
+                },
+                "delete": {
+                  "FULL_PATH": "/rnbo/inst/1/presets/delete",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Delete a preset with the given name"
+                },
+                "del": {
+                  "FULL_PATH": "/rnbo/inst/1/presets/del",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Delete a preset with the given name"
+                },
+                "initial": {
+                  "FULL_PATH": "/rnbo/inst/1/presets/initial",
+                  "TYPE": "s",
+                  "VALUE": "Default",
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Indicate a preset, by name, that should be loaded every time this patch is reloaded. Set to an empty string to load the last loaded preset instead"
+                },
+                "midi_channel": {
+                  "FULL_PATH": "/rnbo/inst/1/presets/midi_channel",
+                  "TYPE": "s",
+                  "VALUE": "none",
+                  "RANGE": [
+                    {
+                      "VALS": [
+                        "1",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "none",
+                        "omni"
+                      ]
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "DESCRIPTION": "Indicate MIDI channel, none or omni (all) that should be used for changing presets via Program Changes."
+                }
+              }
+            },
+            "midi": {
+              "FULL_PATH": "/rnbo/inst/1/midi",
+              "CONTENTS": {
+                "in": {
+                  "FULL_PATH": "/rnbo/inst/1/midi/in",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "midi events in to your RNBO patch"
+                },
+                "out": {
+                  "FULL_PATH": "/rnbo/inst/1/midi/out",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "midi events out of your RNBO patch"
+                },
+                "last": {
+                  "FULL_PATH": "/rnbo/inst/1/midi/last",
+                  "CONTENTS": {
+                    "value": {
+                      "FULL_PATH": "/rnbo/inst/1/midi/last/value",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "JSON encoded string representing the last MIDI mappable message seen by this instance, only reports if \"report\" is true"
+                    },
+                    "report": {
+                      "FULL_PATH": "/rnbo/inst/1/midi/last/report",
+                      "TYPE": "F",
+                      "VALUE": null,
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "Turn on/off publishing to the last \"value\" parameter"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "FULL_PATH": "/rnbo/inst/2",
+          "CONTENTS": {
+            "jack": {
+              "FULL_PATH": "/rnbo/inst/2/jack",
+              "CONTENTS": {
+                "connections": {
+                  "FULL_PATH": "/rnbo/inst/2/jack/connections",
+                  "CONTENTS": {
+                    "audio": {
+                      "FULL_PATH": "/rnbo/inst/2/jack/connections/audio",
+                      "CONTENTS": {
+                        "sinks": {
+                          "FULL_PATH": "/rnbo/inst/2/jack/connections/audio/sinks"
+                        },
+                        "sources": {
+                          "FULL_PATH": "/rnbo/inst/2/jack/connections/audio/sources",
+                          "CONTENTS": {
+                            "out1": {
+                              "FULL_PATH": "/rnbo/inst/2/jack/connections/audio/sources/out1",
+                              "TYPE": "s",
+                              "VALUE": [
+                                "Binaural-0:in1"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "midi": {
+                      "FULL_PATH": "/rnbo/inst/2/jack/connections/midi",
+                      "CONTENTS": {
+                        "sinks": {
+                          "FULL_PATH": "/rnbo/inst/2/jack/connections/midi/sinks",
+                          "CONTENTS": {
+                            "midiin1": {
+                              "FULL_PATH": "/rnbo/inst/2/jack/connections/midi/sinks/midiin1",
+                              "TYPE": "",
+                              "VALUE": [],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        },
+                        "sources": {
+                          "FULL_PATH": "/rnbo/inst/2/jack/connections/midi/sources",
+                          "CONTENTS": {
+                            "midiout1": {
+                              "FULL_PATH": "/rnbo/inst/2/jack/connections/midi/sources/midiout1",
+                              "TYPE": "",
+                              "VALUE": [],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "name": {
+                  "FULL_PATH": "/rnbo/inst/2/jack/name",
+                  "TYPE": "s",
+                  "VALUE": "ToneGen-2",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none"
+                },
+                "audio_ins": {
+                  "FULL_PATH": "/rnbo/inst/2/jack/audio_ins",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "audio_outs": {
+                  "FULL_PATH": "/rnbo/inst/2/jack/audio_outs",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "ToneGen-2:out1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "midi_ins": {
+                  "FULL_PATH": "/rnbo/inst/2/jack/midi_ins",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "ToneGen-2:midiin1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "midi_outs": {
+                  "FULL_PATH": "/rnbo/inst/2/jack/midi_outs",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "ToneGen-2:midiout1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                }
+              }
+            },
+            "name": {
+              "FULL_PATH": "/rnbo/inst/2/name",
+              "TYPE": "s",
+              "VALUE": "ToneGen",
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "The name of the loaded patcher"
+            },
+            "params": {
+              "FULL_PATH": "/rnbo/inst/2/params",
+              "DESCRIPTION": "Parameter get/set",
+              "CONTENTS": {
+                "tonefreq": {
+                  "FULL_PATH": "/rnbo/inst/2/params/tonefreq",
+                  "TYPE": "f",
+                  "VALUE": 20,
+                  "RANGE": [
+                    {
+                      "MIN": 20,
+                      "MAX": 1000
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/2/params/tonefreq/index",
+                      "TYPE": "i",
+                      "VALUE": 0,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/2/params/tonefreq/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/2/params/tonefreq/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                },
+                "tonevol": {
+                  "FULL_PATH": "/rnbo/inst/2/params/tonevol",
+                  "TYPE": "f",
+                  "VALUE": 0,
+                  "RANGE": [
+                    {
+                      "MIN": 0,
+                      "MAX": 158
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/2/params/tonevol/index",
+                      "TYPE": "i",
+                      "VALUE": 1,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/2/params/tonevol/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/2/params/tonevol/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                }
+              }
+            },
+            "data_refs": {
+              "FULL_PATH": "/rnbo/inst/2/data_refs"
+            },
+            "presets": {
+              "FULL_PATH": "/rnbo/inst/2/presets",
+              "CONTENTS": {
+                "entries": {
+                  "FULL_PATH": "/rnbo/inst/2/presets/entries",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "A list of presets that can be loaded"
+                },
+                "save": {
+                  "FULL_PATH": "/rnbo/inst/2/presets/save",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Save the current settings as a preset with the given name"
+                },
+                "rename": {
+                  "FULL_PATH": "/rnbo/inst/2/presets/rename",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "rename a preset, arguments: oldname, newName"
+                },
+                "load": {
+                  "FULL_PATH": "/rnbo/inst/2/presets/load",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Load a preset with the given name"
+                },
+                "loaded": {
+                  "FULL_PATH": "/rnbo/inst/2/presets/loaded",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Indicates that a preset was loaded. A name with a / indiciates a set preset where the format is setname/setpresetname"
+                },
+                "delete": {
+                  "FULL_PATH": "/rnbo/inst/2/presets/delete",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Delete a preset with the given name"
+                },
+                "del": {
+                  "FULL_PATH": "/rnbo/inst/2/presets/del",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Delete a preset with the given name"
+                },
+                "initial": {
+                  "FULL_PATH": "/rnbo/inst/2/presets/initial",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Indicate a preset, by name, that should be loaded every time this patch is reloaded. Set to an empty string to load the last loaded preset instead"
+                },
+                "midi_channel": {
+                  "FULL_PATH": "/rnbo/inst/2/presets/midi_channel",
+                  "TYPE": "s",
+                  "VALUE": "none",
+                  "RANGE": [
+                    {
+                      "VALS": [
+                        "1",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "none",
+                        "omni"
+                      ]
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "DESCRIPTION": "Indicate MIDI channel, none or omni (all) that should be used for changing presets via Program Changes."
+                }
+              }
+            },
+            "midi": {
+              "FULL_PATH": "/rnbo/inst/2/midi",
+              "CONTENTS": {
+                "in": {
+                  "FULL_PATH": "/rnbo/inst/2/midi/in",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "midi events in to your RNBO patch"
+                },
+                "out": {
+                  "FULL_PATH": "/rnbo/inst/2/midi/out",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "midi events out of your RNBO patch"
+                },
+                "last": {
+                  "FULL_PATH": "/rnbo/inst/2/midi/last",
+                  "CONTENTS": {
+                    "value": {
+                      "FULL_PATH": "/rnbo/inst/2/midi/last/value",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "JSON encoded string representing the last MIDI mappable message seen by this instance, only reports if \"report\" is true"
+                    },
+                    "report": {
+                      "FULL_PATH": "/rnbo/inst/2/midi/last/report",
+                      "TYPE": "F",
+                      "VALUE": null,
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "Turn on/off publishing to the last \"value\" parameter"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "FULL_PATH": "/rnbo/inst/3",
+          "CONTENTS": {
+            "jack": {
+              "FULL_PATH": "/rnbo/inst/3/jack",
+              "CONTENTS": {
+                "connections": {
+                  "FULL_PATH": "/rnbo/inst/3/jack/connections",
+                  "CONTENTS": {
+                    "audio": {
+                      "FULL_PATH": "/rnbo/inst/3/jack/connections/audio",
+                      "CONTENTS": {
+                        "sinks": {
+                          "FULL_PATH": "/rnbo/inst/3/jack/connections/audio/sinks"
+                        },
+                        "sources": {
+                          "FULL_PATH": "/rnbo/inst/3/jack/connections/audio/sources",
+                          "CONTENTS": {
+                            "out1": {
+                              "FULL_PATH": "/rnbo/inst/3/jack/connections/audio/sources/out1",
+                              "TYPE": "s",
+                              "VALUE": [
+                                "Binaural-0:in1"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "midi": {
+                      "FULL_PATH": "/rnbo/inst/3/jack/connections/midi",
+                      "CONTENTS": {
+                        "sinks": {
+                          "FULL_PATH": "/rnbo/inst/3/jack/connections/midi/sinks",
+                          "CONTENTS": {
+                            "midiin1": {
+                              "FULL_PATH": "/rnbo/inst/3/jack/connections/midi/sinks/midiin1",
+                              "TYPE": "",
+                              "VALUE": [],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        },
+                        "sources": {
+                          "FULL_PATH": "/rnbo/inst/3/jack/connections/midi/sources",
+                          "CONTENTS": {
+                            "midiout1": {
+                              "FULL_PATH": "/rnbo/inst/3/jack/connections/midi/sources/midiout1",
+                              "TYPE": "",
+                              "VALUE": [],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "name": {
+                  "FULL_PATH": "/rnbo/inst/3/jack/name",
+                  "TYPE": "s",
+                  "VALUE": "PinkGen-3",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none"
+                },
+                "audio_ins": {
+                  "FULL_PATH": "/rnbo/inst/3/jack/audio_ins",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "audio_outs": {
+                  "FULL_PATH": "/rnbo/inst/3/jack/audio_outs",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "PinkGen-3:out1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "midi_ins": {
+                  "FULL_PATH": "/rnbo/inst/3/jack/midi_ins",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "PinkGen-3:midiin1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "midi_outs": {
+                  "FULL_PATH": "/rnbo/inst/3/jack/midi_outs",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "PinkGen-3:midiout1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                }
+              }
+            },
+            "name": {
+              "FULL_PATH": "/rnbo/inst/3/name",
+              "TYPE": "s",
+              "VALUE": "PinkGen",
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "The name of the loaded patcher"
+            },
+            "params": {
+              "FULL_PATH": "/rnbo/inst/3/params",
+              "DESCRIPTION": "Parameter get/set",
+              "CONTENTS": {
+                "pinkvol": {
+                  "FULL_PATH": "/rnbo/inst/3/params/pinkvol",
+                  "TYPE": "f",
+                  "VALUE": 0,
+                  "RANGE": [
+                    {
+                      "MIN": 0,
+                      "MAX": 158
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/3/params/pinkvol/index",
+                      "TYPE": "i",
+                      "VALUE": 0,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/3/params/pinkvol/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/3/params/pinkvol/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                }
+              }
+            },
+            "data_refs": {
+              "FULL_PATH": "/rnbo/inst/3/data_refs"
+            },
+            "presets": {
+              "FULL_PATH": "/rnbo/inst/3/presets",
+              "CONTENTS": {
+                "entries": {
+                  "FULL_PATH": "/rnbo/inst/3/presets/entries",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "PinkGen"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "A list of presets that can be loaded"
+                },
+                "save": {
+                  "FULL_PATH": "/rnbo/inst/3/presets/save",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Save the current settings as a preset with the given name"
+                },
+                "rename": {
+                  "FULL_PATH": "/rnbo/inst/3/presets/rename",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "rename a preset, arguments: oldname, newName"
+                },
+                "load": {
+                  "FULL_PATH": "/rnbo/inst/3/presets/load",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Load a preset with the given name"
+                },
+                "loaded": {
+                  "FULL_PATH": "/rnbo/inst/3/presets/loaded",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Indicates that a preset was loaded. A name with a / indiciates a set preset where the format is setname/setpresetname"
+                },
+                "delete": {
+                  "FULL_PATH": "/rnbo/inst/3/presets/delete",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Delete a preset with the given name"
+                },
+                "del": {
+                  "FULL_PATH": "/rnbo/inst/3/presets/del",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Delete a preset with the given name"
+                },
+                "initial": {
+                  "FULL_PATH": "/rnbo/inst/3/presets/initial",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Indicate a preset, by name, that should be loaded every time this patch is reloaded. Set to an empty string to load the last loaded preset instead"
+                },
+                "midi_channel": {
+                  "FULL_PATH": "/rnbo/inst/3/presets/midi_channel",
+                  "TYPE": "s",
+                  "VALUE": "none",
+                  "RANGE": [
+                    {
+                      "VALS": [
+                        "1",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "none",
+                        "omni"
+                      ]
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "DESCRIPTION": "Indicate MIDI channel, none or omni (all) that should be used for changing presets via Program Changes."
+                }
+              }
+            },
+            "midi": {
+              "FULL_PATH": "/rnbo/inst/3/midi",
+              "CONTENTS": {
+                "in": {
+                  "FULL_PATH": "/rnbo/inst/3/midi/in",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "midi events in to your RNBO patch"
+                },
+                "out": {
+                  "FULL_PATH": "/rnbo/inst/3/midi/out",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "midi events out of your RNBO patch"
+                },
+                "last": {
+                  "FULL_PATH": "/rnbo/inst/3/midi/last",
+                  "CONTENTS": {
+                    "value": {
+                      "FULL_PATH": "/rnbo/inst/3/midi/last/value",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "JSON encoded string representing the last MIDI mappable message seen by this instance, only reports if \"report\" is true"
+                    },
+                    "report": {
+                      "FULL_PATH": "/rnbo/inst/3/midi/last/report",
+                      "TYPE": "F",
+                      "VALUE": null,
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "Turn on/off publishing to the last \"value\" parameter"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "FULL_PATH": "/rnbo/inst/4",
+          "CONTENTS": {
+            "jack": {
+              "FULL_PATH": "/rnbo/inst/4/jack",
+              "CONTENTS": {
+                "connections": {
+                  "FULL_PATH": "/rnbo/inst/4/jack/connections",
+                  "CONTENTS": {
+                    "audio": {
+                      "FULL_PATH": "/rnbo/inst/4/jack/connections/audio",
+                      "CONTENTS": {
+                        "sinks": {
+                          "FULL_PATH": "/rnbo/inst/4/jack/connections/audio/sinks",
+                          "CONTENTS": {
+                            "in1": {
+                              "FULL_PATH": "/rnbo/inst/4/jack/connections/audio/sinks/in1",
+                              "TYPE": "s",
+                              "VALUE": [
+                                "system:capture_1"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            },
+                            "in2": {
+                              "FULL_PATH": "/rnbo/inst/4/jack/connections/audio/sinks/in2",
+                              "TYPE": "s",
+                              "VALUE": [
+                                "system:capture_1"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        },
+                        "sources": {
+                          "FULL_PATH": "/rnbo/inst/4/jack/connections/audio/sources",
+                          "CONTENTS": {
+                            "out1": {
+                              "FULL_PATH": "/rnbo/inst/4/jack/connections/audio/sources/out1",
+                              "TYPE": "s",
+                              "VALUE": [
+                                "PitchShift-1:in1"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            },
+                            "out2": {
+                              "FULL_PATH": "/rnbo/inst/4/jack/connections/audio/sources/out2",
+                              "TYPE": "s",
+                              "VALUE": [
+                                "PitchShift-1:in2"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "midi": {
+                      "FULL_PATH": "/rnbo/inst/4/jack/connections/midi",
+                      "CONTENTS": {
+                        "sinks": {
+                          "FULL_PATH": "/rnbo/inst/4/jack/connections/midi/sinks",
+                          "CONTENTS": {
+                            "midiin1": {
+                              "FULL_PATH": "/rnbo/inst/4/jack/connections/midi/sinks/midiin1",
+                              "TYPE": "",
+                              "VALUE": [],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        },
+                        "sources": {
+                          "FULL_PATH": "/rnbo/inst/4/jack/connections/midi/sources",
+                          "CONTENTS": {
+                            "midiout1": {
+                              "FULL_PATH": "/rnbo/inst/4/jack/connections/midi/sources/midiout1",
+                              "TYPE": "",
+                              "VALUE": [],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "name": {
+                  "FULL_PATH": "/rnbo/inst/4/jack/name",
+                  "TYPE": "s",
+                  "VALUE": "Compressor-4",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none"
+                },
+                "audio_ins": {
+                  "FULL_PATH": "/rnbo/inst/4/jack/audio_ins",
+                  "TYPE": "ss",
+                  "VALUE": [
+                    "Compressor-4:in1",
+                    "Compressor-4:in2"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "audio_outs": {
+                  "FULL_PATH": "/rnbo/inst/4/jack/audio_outs",
+                  "TYPE": "ss",
+                  "VALUE": [
+                    "Compressor-4:out1",
+                    "Compressor-4:out2"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "midi_ins": {
+                  "FULL_PATH": "/rnbo/inst/4/jack/midi_ins",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "Compressor-4:midiin1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "midi_outs": {
+                  "FULL_PATH": "/rnbo/inst/4/jack/midi_outs",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "Compressor-4:midiout1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                }
+              }
+            },
+            "name": {
+              "FULL_PATH": "/rnbo/inst/4/name",
+              "TYPE": "s",
+              "VALUE": "Compressor",
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "The name of the loaded patcher"
+            },
+            "params": {
+              "FULL_PATH": "/rnbo/inst/4/params",
+              "DESCRIPTION": "Parameter get/set",
+              "CONTENTS": {
+                "lookahead": {
+                  "FULL_PATH": "/rnbo/inst/4/params/lookahead",
+                  "TYPE": "s",
+                  "VALUE": "1",
+                  "RANGE": [
+                    {
+                      "VALS": [
+                        "0",
+                        "1",
+                        "10"
+                      ]
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/4/params/lookahead/index",
+                      "TYPE": "i",
+                      "VALUE": 0,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/4/params/lookahead/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0.5,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/4/params/lookahead/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                },
+                "volume": {
+                  "FULL_PATH": "/rnbo/inst/4/params/volume",
+                  "TYPE": "f",
+                  "VALUE": 0,
+                  "RANGE": [
+                    {
+                      "MIN": -100,
+                      "MAX": 100
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/4/params/volume/index",
+                      "TYPE": "i",
+                      "VALUE": 1,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/4/params/volume/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0.5,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/4/params/volume/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                },
+                "comp": {
+                  "FULL_PATH": "/rnbo/inst/4/params/comp",
+                  "TYPE": "f",
+                  "VALUE": 25,
+                  "RANGE": [
+                    {
+                      "MIN": 0,
+                      "MAX": 100
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/4/params/comp/index",
+                      "TYPE": "i",
+                      "VALUE": 2,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/4/params/comp/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0.25,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/4/params/comp/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                },
+                "softclip": {
+                  "FULL_PATH": "/rnbo/inst/4/params/softclip",
+                  "TYPE": "s",
+                  "VALUE": "0",
+                  "RANGE": [
+                    {
+                      "VALS": [
+                        "0",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/4/params/softclip/index",
+                      "TYPE": "i",
+                      "VALUE": 3,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/4/params/softclip/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/4/params/softclip/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                },
+                "attack": {
+                  "FULL_PATH": "/rnbo/inst/4/params/attack",
+                  "TYPE": "f",
+                  "VALUE": 25,
+                  "RANGE": [
+                    {
+                      "MIN": 0,
+                      "MAX": 100
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/4/params/attack/index",
+                      "TYPE": "i",
+                      "VALUE": 4,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/4/params/attack/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0.25,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/4/params/attack/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                },
+                "sustain": {
+                  "FULL_PATH": "/rnbo/inst/4/params/sustain",
+                  "TYPE": "f",
+                  "VALUE": 25,
+                  "RANGE": [
+                    {
+                      "MIN": 0,
+                      "MAX": 100
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/4/params/sustain/index",
+                      "TYPE": "i",
+                      "VALUE": 5,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/4/params/sustain/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0.25,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/4/params/sustain/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                }
+              }
+            },
+            "data_refs": {
+              "FULL_PATH": "/rnbo/inst/4/data_refs"
+            },
+            "presets": {
+              "FULL_PATH": "/rnbo/inst/4/presets",
+              "CONTENTS": {
+                "entries": {
+                  "FULL_PATH": "/rnbo/inst/4/presets/entries",
+                  "TYPE": "ssss",
+                  "VALUE": [
+                    "Default",
+                    "High Gain",
+                    "Picky",
+                    "Spongy"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "A list of presets that can be loaded"
+                },
+                "save": {
+                  "FULL_PATH": "/rnbo/inst/4/presets/save",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Save the current settings as a preset with the given name"
+                },
+                "rename": {
+                  "FULL_PATH": "/rnbo/inst/4/presets/rename",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "rename a preset, arguments: oldname, newName"
+                },
+                "load": {
+                  "FULL_PATH": "/rnbo/inst/4/presets/load",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Load a preset with the given name"
+                },
+                "loaded": {
+                  "FULL_PATH": "/rnbo/inst/4/presets/loaded",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Indicates that a preset was loaded. A name with a / indiciates a set preset where the format is setname/setpresetname"
+                },
+                "delete": {
+                  "FULL_PATH": "/rnbo/inst/4/presets/delete",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Delete a preset with the given name"
+                },
+                "del": {
+                  "FULL_PATH": "/rnbo/inst/4/presets/del",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Delete a preset with the given name"
+                },
+                "initial": {
+                  "FULL_PATH": "/rnbo/inst/4/presets/initial",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Indicate a preset, by name, that should be loaded every time this patch is reloaded. Set to an empty string to load the last loaded preset instead"
+                },
+                "midi_channel": {
+                  "FULL_PATH": "/rnbo/inst/4/presets/midi_channel",
+                  "TYPE": "s",
+                  "VALUE": "none",
+                  "RANGE": [
+                    {
+                      "VALS": [
+                        "1",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "none",
+                        "omni"
+                      ]
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "DESCRIPTION": "Indicate MIDI channel, none or omni (all) that should be used for changing presets via Program Changes."
+                }
+              }
+            },
+            "messages": {
+              "FULL_PATH": "/rnbo/inst/4/messages",
+              "CONTENTS": {
+                "out": {
+                  "FULL_PATH": "/rnbo/inst/4/messages/out",
+                  "CONTENTS": {
+                    "atten": {
+                      "FULL_PATH": "/rnbo/inst/4/messages/out/atten",
+                      "TYPE": "",
+                      "VALUE": [],
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list",
+                      "CONTENTS": {
+                        "meta": {
+                          "FULL_PATH": "/rnbo/inst/4/messages/out/atten/meta",
+                          "TYPE": "s",
+                          "VALUE": "",
+                          "ACCESS": 3,
+                          "CLIPMODE": "none"
+                        }
+                      }
+                    },
+                    "compens": {
+                      "FULL_PATH": "/rnbo/inst/4/messages/out/compens",
+                      "TYPE": "f",
+                      "VALUE": [
+                        6.463369846343994
+                      ],
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list",
+                      "CONTENTS": {
+                        "meta": {
+                          "FULL_PATH": "/rnbo/inst/4/messages/out/compens/meta",
+                          "TYPE": "s",
+                          "VALUE": "",
+                          "ACCESS": 3,
+                          "CLIPMODE": "none"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "midi": {
+              "FULL_PATH": "/rnbo/inst/4/midi",
+              "CONTENTS": {
+                "in": {
+                  "FULL_PATH": "/rnbo/inst/4/midi/in",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "midi events in to your RNBO patch"
+                },
+                "out": {
+                  "FULL_PATH": "/rnbo/inst/4/midi/out",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "midi events out of your RNBO patch"
+                },
+                "last": {
+                  "FULL_PATH": "/rnbo/inst/4/midi/last",
+                  "CONTENTS": {
+                    "value": {
+                      "FULL_PATH": "/rnbo/inst/4/midi/last/value",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "JSON encoded string representing the last MIDI mappable message seen by this instance, only reports if \"report\" is true"
+                    },
+                    "report": {
+                      "FULL_PATH": "/rnbo/inst/4/midi/last/report",
+                      "TYPE": "F",
+                      "VALUE": null,
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "Turn on/off publishing to the last \"value\" parameter"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "5": {
+          "FULL_PATH": "/rnbo/inst/5",
+          "CONTENTS": {
+            "jack": {
+              "FULL_PATH": "/rnbo/inst/5/jack",
+              "CONTENTS": {
+                "connections": {
+                  "FULL_PATH": "/rnbo/inst/5/jack/connections",
+                  "CONTENTS": {
+                    "audio": {
+                      "FULL_PATH": "/rnbo/inst/5/jack/connections/audio",
+                      "CONTENTS": {
+                        "sinks": {
+                          "FULL_PATH": "/rnbo/inst/5/jack/connections/audio/sinks"
+                        },
+                        "sources": {
+                          "FULL_PATH": "/rnbo/inst/5/jack/connections/audio/sources",
+                          "CONTENTS": {
+                            "out1": {
+                              "FULL_PATH": "/rnbo/inst/5/jack/connections/audio/sources/out1",
+                              "TYPE": "s",
+                              "VALUE": [
+                                "Binaural-0:in1"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            },
+                            "out2": {
+                              "FULL_PATH": "/rnbo/inst/5/jack/connections/audio/sources/out2",
+                              "TYPE": "s",
+                              "VALUE": [
+                                "Binaural-0:in1"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "midi": {
+                      "FULL_PATH": "/rnbo/inst/5/jack/connections/midi",
+                      "CONTENTS": {
+                        "sinks": {
+                          "FULL_PATH": "/rnbo/inst/5/jack/connections/midi/sinks",
+                          "CONTENTS": {
+                            "midiin1": {
+                              "FULL_PATH": "/rnbo/inst/5/jack/connections/midi/sinks/midiin1",
+                              "TYPE": "",
+                              "VALUE": [],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        },
+                        "sources": {
+                          "FULL_PATH": "/rnbo/inst/5/jack/connections/midi/sources",
+                          "CONTENTS": {
+                            "midiout1": {
+                              "FULL_PATH": "/rnbo/inst/5/jack/connections/midi/sources/midiout1",
+                              "TYPE": "",
+                              "VALUE": [],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "name": {
+                  "FULL_PATH": "/rnbo/inst/5/jack/name",
+                  "TYPE": "s",
+                  "VALUE": "SoundFile-5",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none"
+                },
+                "audio_ins": {
+                  "FULL_PATH": "/rnbo/inst/5/jack/audio_ins",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "audio_outs": {
+                  "FULL_PATH": "/rnbo/inst/5/jack/audio_outs",
+                  "TYPE": "ss",
+                  "VALUE": [
+                    "SoundFile-5:out1",
+                    "SoundFile-5:out2"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "midi_ins": {
+                  "FULL_PATH": "/rnbo/inst/5/jack/midi_ins",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "SoundFile-5:midiin1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "midi_outs": {
+                  "FULL_PATH": "/rnbo/inst/5/jack/midi_outs",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "SoundFile-5:midiout1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                }
+              }
+            },
+            "name": {
+              "FULL_PATH": "/rnbo/inst/5/name",
+              "TYPE": "s",
+              "VALUE": "SoundFile",
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "The name of the loaded patcher"
+            },
+            "params": {
+              "FULL_PATH": "/rnbo/inst/5/params",
+              "DESCRIPTION": "Parameter get/set",
+              "CONTENTS": {
+                "soundvol": {
+                  "FULL_PATH": "/rnbo/inst/5/params/soundvol",
+                  "TYPE": "f",
+                  "VALUE": 0,
+                  "RANGE": [
+                    {
+                      "MIN": 0,
+                      "MAX": 158
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/5/params/soundvol/index",
+                      "TYPE": "i",
+                      "VALUE": 0,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/5/params/soundvol/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/5/params/soundvol/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                }
+              }
+            },
+            "data_refs": {
+              "FULL_PATH": "/rnbo/inst/5/data_refs",
+              "CONTENTS": {
+                "buff": {
+                  "FULL_PATH": "/rnbo/inst/5/data_refs/buff",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 3,
+                  "CLIPMODE": "none"
+                }
+              }
+            },
+            "presets": {
+              "FULL_PATH": "/rnbo/inst/5/presets",
+              "CONTENTS": {
+                "entries": {
+                  "FULL_PATH": "/rnbo/inst/5/presets/entries",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "SoundFile"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "A list of presets that can be loaded"
+                },
+                "save": {
+                  "FULL_PATH": "/rnbo/inst/5/presets/save",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Save the current settings as a preset with the given name"
+                },
+                "rename": {
+                  "FULL_PATH": "/rnbo/inst/5/presets/rename",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "rename a preset, arguments: oldname, newName"
+                },
+                "load": {
+                  "FULL_PATH": "/rnbo/inst/5/presets/load",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Load a preset with the given name"
+                },
+                "loaded": {
+                  "FULL_PATH": "/rnbo/inst/5/presets/loaded",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Indicates that a preset was loaded. A name with a / indiciates a set preset where the format is setname/setpresetname"
+                },
+                "delete": {
+                  "FULL_PATH": "/rnbo/inst/5/presets/delete",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Delete a preset with the given name"
+                },
+                "del": {
+                  "FULL_PATH": "/rnbo/inst/5/presets/del",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Delete a preset with the given name"
+                },
+                "initial": {
+                  "FULL_PATH": "/rnbo/inst/5/presets/initial",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Indicate a preset, by name, that should be loaded every time this patch is reloaded. Set to an empty string to load the last loaded preset instead"
+                },
+                "midi_channel": {
+                  "FULL_PATH": "/rnbo/inst/5/presets/midi_channel",
+                  "TYPE": "s",
+                  "VALUE": "none",
+                  "RANGE": [
+                    {
+                      "VALS": [
+                        "1",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "none",
+                        "omni"
+                      ]
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "DESCRIPTION": "Indicate MIDI channel, none or omni (all) that should be used for changing presets via Program Changes."
+                }
+              }
+            },
+            "messages": {
+              "FULL_PATH": "/rnbo/inst/5/messages",
+              "CONTENTS": {
+                "in": {
+                  "FULL_PATH": "/rnbo/inst/5/messages/in",
+                  "CONTENTS": {
+                    "in1": {
+                      "FULL_PATH": "/rnbo/inst/5/messages/in/in1",
+                      "TYPE": "",
+                      "VALUE": [],
+                      "ACCESS": 2,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list",
+                      "CONTENTS": {
+                        "meta": {
+                          "FULL_PATH": "/rnbo/inst/5/messages/in/in1/meta",
+                          "TYPE": "s",
+                          "VALUE": "",
+                          "ACCESS": 3,
+                          "CLIPMODE": "none"
+                        }
+                      }
+                    },
+                    "in3": {
+                      "FULL_PATH": "/rnbo/inst/5/messages/in/in3",
+                      "TYPE": "",
+                      "VALUE": [],
+                      "ACCESS": 2,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list",
+                      "CONTENTS": {
+                        "meta": {
+                          "FULL_PATH": "/rnbo/inst/5/messages/in/in3/meta",
+                          "TYPE": "s",
+                          "VALUE": "",
+                          "ACCESS": 3,
+                          "CLIPMODE": "none"
+                        }
+                      }
+                    },
+                    "in2": {
+                      "FULL_PATH": "/rnbo/inst/5/messages/in/in2",
+                      "TYPE": "",
+                      "VALUE": [],
+                      "ACCESS": 2,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list",
+                      "CONTENTS": {
+                        "meta": {
+                          "FULL_PATH": "/rnbo/inst/5/messages/in/in2/meta",
+                          "TYPE": "s",
+                          "VALUE": "",
+                          "ACCESS": 3,
+                          "CLIPMODE": "none"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "midi": {
+              "FULL_PATH": "/rnbo/inst/5/midi",
+              "CONTENTS": {
+                "in": {
+                  "FULL_PATH": "/rnbo/inst/5/midi/in",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "midi events in to your RNBO patch"
+                },
+                "out": {
+                  "FULL_PATH": "/rnbo/inst/5/midi/out",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "midi events out of your RNBO patch"
+                },
+                "last": {
+                  "FULL_PATH": "/rnbo/inst/5/midi/last",
+                  "CONTENTS": {
+                    "value": {
+                      "FULL_PATH": "/rnbo/inst/5/midi/last/value",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "JSON encoded string representing the last MIDI mappable message seen by this instance, only reports if \"report\" is true"
+                    },
+                    "report": {
+                      "FULL_PATH": "/rnbo/inst/5/midi/last/report",
+                      "TYPE": "F",
+                      "VALUE": null,
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "Turn on/off publishing to the last \"value\" parameter"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "6": {
+          "FULL_PATH": "/rnbo/inst/6",
+          "CONTENTS": {
+            "jack": {
+              "FULL_PATH": "/rnbo/inst/6/jack",
+              "CONTENTS": {
+                "connections": {
+                  "FULL_PATH": "/rnbo/inst/6/jack/connections",
+                  "CONTENTS": {
+                    "audio": {
+                      "FULL_PATH": "/rnbo/inst/6/jack/connections/audio",
+                      "CONTENTS": {
+                        "sinks": {
+                          "FULL_PATH": "/rnbo/inst/6/jack/connections/audio/sinks"
+                        },
+                        "sources": {
+                          "FULL_PATH": "/rnbo/inst/6/jack/connections/audio/sources",
+                          "CONTENTS": {
+                            "out1": {
+                              "FULL_PATH": "/rnbo/inst/6/jack/connections/audio/sources/out1",
+                              "TYPE": "s",
+                              "VALUE": [
+                                "Binaural-0:in1"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            },
+                            "out2": {
+                              "FULL_PATH": "/rnbo/inst/6/jack/connections/audio/sources/out2",
+                              "TYPE": "s",
+                              "VALUE": [
+                                "Binaural-0:in1"
+                              ],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "midi": {
+                      "FULL_PATH": "/rnbo/inst/6/jack/connections/midi",
+                      "CONTENTS": {
+                        "sinks": {
+                          "FULL_PATH": "/rnbo/inst/6/jack/connections/midi/sinks",
+                          "CONTENTS": {
+                            "midiin1": {
+                              "FULL_PATH": "/rnbo/inst/6/jack/connections/midi/sinks/midiin1",
+                              "TYPE": "",
+                              "VALUE": [],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        },
+                        "sources": {
+                          "FULL_PATH": "/rnbo/inst/6/jack/connections/midi/sources",
+                          "CONTENTS": {
+                            "midiout1": {
+                              "FULL_PATH": "/rnbo/inst/6/jack/connections/midi/sources/midiout1",
+                              "TYPE": "",
+                              "VALUE": [],
+                              "ACCESS": 3,
+                              "CLIPMODE": "none",
+                              "EXTENDED_TYPE": "list",
+                              "DESCRIPTION": "Port and its connections, send port names to change, see /rnbo/jack/ports for names to connect"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "name": {
+                  "FULL_PATH": "/rnbo/inst/6/jack/name",
+                  "TYPE": "s",
+                  "VALUE": "SoundFile-6",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none"
+                },
+                "audio_ins": {
+                  "FULL_PATH": "/rnbo/inst/6/jack/audio_ins",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "audio_outs": {
+                  "FULL_PATH": "/rnbo/inst/6/jack/audio_outs",
+                  "TYPE": "ss",
+                  "VALUE": [
+                    "SoundFile-6:out1",
+                    "SoundFile-6:out2"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "midi_ins": {
+                  "FULL_PATH": "/rnbo/inst/6/jack/midi_ins",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "SoundFile-6:midiin1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                },
+                "midi_outs": {
+                  "FULL_PATH": "/rnbo/inst/6/jack/midi_outs",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "SoundFile-6:midiout1"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list"
+                }
+              }
+            },
+            "name": {
+              "FULL_PATH": "/rnbo/inst/6/name",
+              "TYPE": "s",
+              "VALUE": "SoundFile",
+              "ACCESS": 1,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "The name of the loaded patcher"
+            },
+            "params": {
+              "FULL_PATH": "/rnbo/inst/6/params",
+              "DESCRIPTION": "Parameter get/set",
+              "CONTENTS": {
+                "soundvol": {
+                  "FULL_PATH": "/rnbo/inst/6/params/soundvol",
+                  "TYPE": "f",
+                  "VALUE": 0,
+                  "RANGE": [
+                    {
+                      "MIN": 0,
+                      "MAX": 158
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "CONTENTS": {
+                    "index": {
+                      "FULL_PATH": "/rnbo/inst/6/params/soundvol/index",
+                      "TYPE": "i",
+                      "VALUE": 0,
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "RNBO parameter index"
+                    },
+                    "normalized": {
+                      "FULL_PATH": "/rnbo/inst/6/params/soundvol/normalized",
+                      "TYPE": "f",
+                      "VALUE": 0,
+                      "RANGE": [
+                        {
+                          "MIN": 0,
+                          "MAX": 1
+                        }
+                      ],
+                      "ACCESS": 3,
+                      "CLIPMODE": "both"
+                    },
+                    "meta": {
+                      "FULL_PATH": "/rnbo/inst/6/params/soundvol/meta",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 3,
+                      "CLIPMODE": "none"
+                    }
+                  }
+                }
+              }
+            },
+            "data_refs": {
+              "FULL_PATH": "/rnbo/inst/6/data_refs",
+              "CONTENTS": {
+                "buff": {
+                  "FULL_PATH": "/rnbo/inst/6/data_refs/buff",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 3,
+                  "CLIPMODE": "none"
+                }
+              }
+            },
+            "presets": {
+              "FULL_PATH": "/rnbo/inst/6/presets",
+              "CONTENTS": {
+                "entries": {
+                  "FULL_PATH": "/rnbo/inst/6/presets/entries",
+                  "TYPE": "s",
+                  "VALUE": [
+                    "SoundFile"
+                  ],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "A list of presets that can be loaded"
+                },
+                "save": {
+                  "FULL_PATH": "/rnbo/inst/6/presets/save",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Save the current settings as a preset with the given name"
+                },
+                "rename": {
+                  "FULL_PATH": "/rnbo/inst/6/presets/rename",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "rename a preset, arguments: oldname, newName"
+                },
+                "load": {
+                  "FULL_PATH": "/rnbo/inst/6/presets/load",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Load a preset with the given name"
+                },
+                "loaded": {
+                  "FULL_PATH": "/rnbo/inst/6/presets/loaded",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Indicates that a preset was loaded. A name with a / indiciates a set preset where the format is setname/setpresetname"
+                },
+                "delete": {
+                  "FULL_PATH": "/rnbo/inst/6/presets/delete",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Delete a preset with the given name"
+                },
+                "del": {
+                  "FULL_PATH": "/rnbo/inst/6/presets/del",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Delete a preset with the given name"
+                },
+                "initial": {
+                  "FULL_PATH": "/rnbo/inst/6/presets/initial",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 3,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Indicate a preset, by name, that should be loaded every time this patch is reloaded. Set to an empty string to load the last loaded preset instead"
+                },
+                "midi_channel": {
+                  "FULL_PATH": "/rnbo/inst/6/presets/midi_channel",
+                  "TYPE": "s",
+                  "VALUE": "none",
+                  "RANGE": [
+                    {
+                      "VALS": [
+                        "1",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "none",
+                        "omni"
+                      ]
+                    }
+                  ],
+                  "ACCESS": 3,
+                  "CLIPMODE": "both",
+                  "DESCRIPTION": "Indicate MIDI channel, none or omni (all) that should be used for changing presets via Program Changes."
+                }
+              }
+            },
+            "messages": {
+              "FULL_PATH": "/rnbo/inst/6/messages",
+              "CONTENTS": {
+                "in": {
+                  "FULL_PATH": "/rnbo/inst/6/messages/in",
+                  "CONTENTS": {
+                    "in1": {
+                      "FULL_PATH": "/rnbo/inst/6/messages/in/in1",
+                      "TYPE": "",
+                      "VALUE": [],
+                      "ACCESS": 2,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list",
+                      "CONTENTS": {
+                        "meta": {
+                          "FULL_PATH": "/rnbo/inst/6/messages/in/in1/meta",
+                          "TYPE": "s",
+                          "VALUE": "",
+                          "ACCESS": 3,
+                          "CLIPMODE": "none"
+                        }
+                      }
+                    },
+                    "in3": {
+                      "FULL_PATH": "/rnbo/inst/6/messages/in/in3",
+                      "TYPE": "",
+                      "VALUE": [],
+                      "ACCESS": 2,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list",
+                      "CONTENTS": {
+                        "meta": {
+                          "FULL_PATH": "/rnbo/inst/6/messages/in/in3/meta",
+                          "TYPE": "s",
+                          "VALUE": "",
+                          "ACCESS": 3,
+                          "CLIPMODE": "none"
+                        }
+                      }
+                    },
+                    "in2": {
+                      "FULL_PATH": "/rnbo/inst/6/messages/in/in2",
+                      "TYPE": "",
+                      "VALUE": [],
+                      "ACCESS": 2,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list",
+                      "CONTENTS": {
+                        "meta": {
+                          "FULL_PATH": "/rnbo/inst/6/messages/in/in2/meta",
+                          "TYPE": "s",
+                          "VALUE": "",
+                          "ACCESS": 3,
+                          "CLIPMODE": "none"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "midi": {
+              "FULL_PATH": "/rnbo/inst/6/midi",
+              "CONTENTS": {
+                "in": {
+                  "FULL_PATH": "/rnbo/inst/6/midi/in",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "midi events in to your RNBO patch"
+                },
+                "out": {
+                  "FULL_PATH": "/rnbo/inst/6/midi/out",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 1,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "midi events out of your RNBO patch"
+                },
+                "last": {
+                  "FULL_PATH": "/rnbo/inst/6/midi/last",
+                  "CONTENTS": {
+                    "value": {
+                      "FULL_PATH": "/rnbo/inst/6/midi/last/value",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "JSON encoded string representing the last MIDI mappable message seen by this instance, only reports if \"report\" is true"
+                    },
+                    "report": {
+                      "FULL_PATH": "/rnbo/inst/6/midi/last/report",
+                      "TYPE": "F",
+                      "VALUE": null,
+                      "ACCESS": 3,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "Turn on/off publishing to the last \"value\" parameter"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "control": {
+          "FULL_PATH": "/rnbo/inst/control",
+          "CONTENTS": {
+            "unload": {
+              "FULL_PATH": "/rnbo/inst/control/unload",
+              "TYPE": "i",
+              "VALUE": 0,
+              "ACCESS": 2,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "Unload a running instance by index, negative will unload all"
+            },
+            "load": {
+              "FULL_PATH": "/rnbo/inst/control/load",
+              "TYPE": "",
+              "VALUE": [],
+              "ACCESS": 2,
+              "CLIPMODE": "none",
+              "EXTENDED_TYPE": "list",
+              "DESCRIPTION": "Load a pre-built patcher by name into the given index. args: index patcher_name [instance_name], a -1 index will create a new instance at the next available index, -2 will do the same but not auto connect it to anything"
+            },
+            "sets": {
+              "FULL_PATH": "/rnbo/inst/control/sets",
+              "CONTENTS": {
+                "meta": {
+                  "FULL_PATH": "/rnbo/inst/control/sets/meta",
+                  "TYPE": "s",
+                  "VALUE": {
+                    "nodes": {
+                      "PinkGen-3": {
+                        "position": {
+                          "x": 571.8966790357907,
+                          "y": 393.09962892627925
+                        }
+                      },
+                      "system-in": {
+                        "position": {
+                          "x": -395.9636658845702,
+                          "y": 5.580350561983039
+                        }
+                      },
+                      "ToneGen-2": {
+                        "position": {
+                          "x": 570.8047356221066,
+                          "y": 218.38868273682175
+                        }
+                      },
+                      "Binaural-0": {
+                        "position": {
+                          "x": 1153.0847949697486,
+                          "y": -4.065007477422171
+                        }
+                      },
+                      "PitchShift-1": {
+                        "position": {
+                          "x": 570.8047356221066,
+                          "y": -1.0919434136841062
+                        }
+                      },
+                      "Compressor-4": {
+                        "position": {
+                          "x": 106.72878480636018,
+                          "y": -5.4597170684205025
+                        }
+                      },
+                      "jack-transport-link": {
+                        "position": {
+                          "x": 1605.3168768329656,
+                          "y": 228.04977567733482
+                        }
+                      },
+                      "system-out": {
+                        "position": {
+                          "x": 1603.0847949697486,
+                          "y": -4.065007477422171
+                        }
+                      },
+                      "SoundFile-5": {
+                        "position": {
+                          "x": 576.2644526905272,
+                          "y": 567.8105751157366
+                        }
+                      },
+                      "SoundFile-6": {
+                        "position": {
+                          "x": 578.4483395178954,
+                          "y": 798.2106354030834
+                        }
+                      },
+                      "rnbo-control": {
+                        "position": {
+                          "x": 1604.3006249636098,
+                          "y": 344.92078079175866
+                        }
+                      }
+                    }
+                  },
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Set/get the metadata for the current set"
+                },
+                "save": {
+                  "FULL_PATH": "/rnbo/inst/control/sets/save",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Save a set of instances assigning the given name"
+                },
+                "load": {
+                  "FULL_PATH": "/rnbo/inst/control/sets/load",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "RANGE": [
+                    {
+                      "VALS": [
+                        "SirenSong"
+                      ]
+                    }
+                  ],
+                  "ACCESS": 2,
+                  "CLIPMODE": "both",
+                  "DESCRIPTION": "Load a set with the given name"
+                },
+                "destroy": {
+                  "FULL_PATH": "/rnbo/inst/control/sets/destroy",
+                  "TYPE": "s",
+                  "VALUE": "",
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "DESCRIPTION": "Delete a set of instances with the given name"
+                },
+                "rename": {
+                  "FULL_PATH": "/rnbo/inst/control/sets/rename",
+                  "TYPE": "",
+                  "VALUE": [],
+                  "ACCESS": 2,
+                  "CLIPMODE": "none",
+                  "EXTENDED_TYPE": "list",
+                  "DESCRIPTION": "Rename a set of instances: oldName, newName"
+                },
+                "current": {
+                  "FULL_PATH": "/rnbo/inst/control/sets/current",
+                  "CONTENTS": {
+                    "name": {
+                      "FULL_PATH": "/rnbo/inst/control/sets/current/name",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "The currently loaded set's name"
+                    }
+                  }
+                },
+                "presets": {
+                  "FULL_PATH": "/rnbo/inst/control/sets/presets",
+                  "CONTENTS": {
+                    "save": {
+                      "FULL_PATH": "/rnbo/inst/control/sets/presets/save",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 2,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "Save a loaded set preset with the given name"
+                    },
+                    "load": {
+                      "FULL_PATH": "/rnbo/inst/control/sets/presets/load",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "RANGE": null,
+                      "ACCESS": 2,
+                      "CLIPMODE": "both",
+                      "DESCRIPTION": "Load a loaded set preset with the given name"
+                    },
+                    "loaded": {
+                      "FULL_PATH": "/rnbo/inst/control/sets/presets/loaded",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 1,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "Indicates the last loaded preset"
+                    },
+                    "destroy": {
+                      "FULL_PATH": "/rnbo/inst/control/sets/presets/destroy",
+                      "TYPE": "s",
+                      "VALUE": "",
+                      "ACCESS": 2,
+                      "CLIPMODE": "none",
+                      "DESCRIPTION": "Delete a loaded set preset with the given name"
+                    },
+                    "rename": {
+                      "FULL_PATH": "/rnbo/inst/control/sets/presets/rename",
+                      "TYPE": "",
+                      "VALUE": [],
+                      "ACCESS": 2,
+                      "CLIPMODE": "none",
+                      "EXTENDED_TYPE": "list",
+                      "DESCRIPTION": "Rename the loaded set's preset: oldName, newName"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "config": {
+          "FULL_PATH": "/rnbo/inst/config",
+          "CONTENTS": {
+            "auto_connect_audio": {
+              "FULL_PATH": "/rnbo/inst/config/auto_connect_audio",
+              "TYPE": "T",
+              "VALUE": null,
+              "ACCESS": 3,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "Automatically connect newly activated instances to audio i/o"
+            },
+            "auto_connect_audio_indexed": {
+              "FULL_PATH": "/rnbo/inst/config/auto_connect_audio_indexed",
+              "TYPE": "T",
+              "VALUE": null,
+              "ACCESS": 3,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "Automatically connect newly activated instances to audio i/o, using the RNBO i/o index to inform the connections"
+            },
+            "auto_connect_midi": {
+              "FULL_PATH": "/rnbo/inst/config/auto_connect_midi",
+              "TYPE": "F",
+              "VALUE": null,
+              "ACCESS": 3,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "Automatically connect newly activated instances to midi i/o"
+            },
+            "auto_connect_midi_hardware": {
+              "FULL_PATH": "/rnbo/inst/config/auto_connect_midi_hardware",
+              "TYPE": "T",
+              "VALUE": null,
+              "ACCESS": 3,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "Automatically connect newly activated instances to midi hardware i/o"
+            },
+            "auto_start_last": {
+              "FULL_PATH": "/rnbo/inst/config/auto_start_last",
+              "TYPE": "T",
+              "VALUE": null,
+              "ACCESS": 3,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "Automatically start the last instance configuration on runner startup"
+            },
+            "audio_fade_in": {
+              "FULL_PATH": "/rnbo/inst/config/audio_fade_in",
+              "TYPE": "f",
+              "VALUE": 20,
+              "ACCESS": 3,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "Fade in milliseconds when creating new instances"
+            },
+            "audio_fade_out": {
+              "FULL_PATH": "/rnbo/inst/config/audio_fade_out",
+              "TYPE": "f",
+              "VALUE": 20,
+              "ACCESS": 3,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "Fade out milliseconds when closing instances"
+            },
+            "port_to_osc": {
+              "FULL_PATH": "/rnbo/inst/config/port_to_osc",
+              "TYPE": "T",
+              "VALUE": null,
+              "ACCESS": 3,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "Map slash prefixed port names to/from OSC messages by default"
+            },
+            "preset_midi_program_change_channel": {
+              "FULL_PATH": "/rnbo/inst/config/preset_midi_program_change_channel",
+              "TYPE": "s",
+              "VALUE": "none",
+              "ACCESS": 3,
+              "CLIPMODE": "none",
+              "DESCRIPTION": "Which channel (or none or omni) should listen for program changes to load a preset by index"
+            }
+          }
+        }
+      }
+    },
+    "config": {
+      "FULL_PATH": "/rnbo/config",
+      "CONTENTS": {
+        "patcher_midi_program_change_channel": {
+          "FULL_PATH": "/rnbo/config/patcher_midi_program_change_channel",
+          "TYPE": "s",
+          "VALUE": "none",
+          "ACCESS": 3,
+          "CLIPMODE": "none",
+          "DESCRIPTION": "Which channel (or none or omni) should listen for program changes to load a patcher by index"
+        },
+        "set_midi_program_change_channel": {
+          "FULL_PATH": "/rnbo/config/set_midi_program_change_channel",
+          "TYPE": "s",
+          "VALUE": "none",
+          "ACCESS": 3,
+          "CLIPMODE": "none",
+          "DESCRIPTION": "Which channel (or none or omni) should listen for program changes to load a set by index"
+        },
+        "set_preset_midi_program_change_channel": {
+          "FULL_PATH": "/rnbo/config/set_preset_midi_program_change_channel",
+          "TYPE": "s",
+          "VALUE": "none",
+          "ACCESS": 3,
+          "CLIPMODE": "none",
+          "DESCRIPTION": "Which channel (or none or omni) should listen for program changes to load a set preset by index"
+        },
+        "control_auto_connect_midi": {
+          "FULL_PATH": "/rnbo/config/control_auto_connect_midi",
+          "TYPE": "T",
+          "VALUE": null,
+          "ACCESS": 3,
+          "CLIPMODE": "none",
+          "DESCRIPTION": "Automatically connect control to midi outs"
+        }
+      }
+    }
+  }
+}
